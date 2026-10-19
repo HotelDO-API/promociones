@@ -83,17 +83,6 @@ main{max-width:1440px;margin:0 auto;padding:28px 18px 64px}
 footer{background:#1B365D;padding:22px 48px;margin-top:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
 .flogo{height:44px;display:block}
 footer p{color:rgba(255,255,255,.4);font-size:.76rem}
-.pal-banner{display:flex;gap:0;border-radius:16px;overflow:hidden;box-shadow:0 6px 32px rgba(23,46,78,.18);margin-bottom:32px;background:#0D2240;min-height:280px}
-.pal-content{flex:1;padding:36px 40px;display:flex;flex-direction:column;justify-content:center;gap:16px;background:linear-gradient(135deg,#0D2240 60%,#1B365D)}
-.pal-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(232,137,10,.18);border:1px solid rgba(232,137,10,.4);color:#E8890A;font-size:.72rem;font-weight:800;padding:5px 14px;border-radius:20px;letter-spacing:.08em;text-transform:uppercase;width:fit-content}
-.pal-title{font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:900;color:#fff;line-height:1.12;letter-spacing:-.02em}
-.pal-title span{color:#E8890A}
-.pal-sub{font-size:.9rem;color:rgba(255,255,255,.72);line-height:1.55}
-.pal-sub strong{color:#fff}
-.pal-destinos{margin-top:4px}
-.pal-dest-title{font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:10px}
-.pal-dest-grid{display:flex;flex-wrap:wrap;gap:8px}
-.pal-dest-item{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;font-size:.8rem;font-weight:700;padding:6px 14px;border-radius:10px}
 @media(max-width:700px){
   .hdr-top{padding:12px 16px}.logo-img{height:52px}
   .hdr-hero{padding:22px 16px 28px}.hdr-hero h1{font-size:1.7rem}
@@ -102,7 +91,6 @@ footer p{color:rgba(255,255,255,.4);font-size:.76rem}
   .dates{grid-template-columns:1fr}
   footer{padding:16px 20px}
   .chain-subnav .tab{padding:11px 14px;font-size:.8rem}
-  .pal-content{padding:20px 18px}
 }
 </style>
 </head>
@@ -121,20 +109,19 @@ footer p{color:rgba(255,255,255,.4);font-size:.76rem}
   </div>
   <div class="hdr-hero">
     <h1>Promociones Exclusivas <span>HotelDO</span></h1>
-    <p>Campa&ntilde;as Octubre 2026 &middot; Semana 43 &middot; Solo para agentes de viajes</p>
+    <p>Campañas Octubre 2026 &middot; Semana 43 &middot; Solo para agentes de viajes</p>
     <div class="stats">
-      <div class="stat"><b>159</b><small>Promociones</small></div>
-      <div class="stat"><b>65%</b><small>Descuento M&aacute;x.</small></div>
-      <div class="stat"><b>62</b><small>Destinos</small></div>
-      <div class="stat"><b>51</b><small>Cadenas</small></div>
+      <div class="stat"><b>76</b><small>Promociones</small></div>
+      <div class="stat"><b>60%</b><small>Descuento Máx.</small></div>
+      <div class="stat"><b>30</b><small>Destinos</small></div>
+      <div class="stat"><b>26</b><small>Cadenas</small></div>
     </div>
   </div>
 </header>
 
 <nav class="main-nav">
-  <button class="tab on" onclick="showPage('promos',this)">&#127991; Promociones</button>
-  <button class="tab" onclick="showPage('cadenas',this)">&#11088; Cadenas Destacadas</button>
-  <button class="tab" onclick="showPage('top',this)">&#127775; Top Ofertas W43</button>
+  <button class="tab on" onclick="showPage('promos',this)">🏷️ Promociones</button>
+  <button class="tab" onclick="showPage('cadenas',this)">⭐ Cadenas Destacadas</button>
 </nav>
 
 <main>
@@ -142,67 +129,44 @@ footer p{color:rgba(255,255,255,.4);font-size:.76rem}
   <!-- PROMOCIONES -->
   <div class="page on" id="promos">
     <div class="bar">
-      <div class="si"><input id="q" type="text" placeholder="Buscar hotel, destino o cadena&hellip;" oninput="render()"></div>
+      <div class="si"><input id="q" type="text" placeholder="Buscar hotel, destino o cadena…" oninput="render()"></div>
       <select id="ord" onchange="render()">
         <option value="da">Mayor descuento primero</option>
         <option value="dd">Menor descuento primero</option>
-        <option value="pa">Destino A&ndash;Z</option>
-        <option value="ha">Hotel A&ndash;Z</option>
+        <option value="pa">Destino A–Z</option>
+        <option value="ha">Hotel A–Z</option>
       </select>
     </div>
     <div class="filters">
-      <button class="fb all-btn on" data-f="ALL" onclick="setF(this)">&#127758; Todos</button>
-      <button class="fb" data-f="Brasil" onclick="setF(this)">Brasil</button>
-      <button class="fb" data-f="Colombia" onclick="setF(this)">Colombia</button>
-      <button class="fb" data-f="Jamaica" onclick="setF(this)">Jamaica</button>
-      <button class="fb" data-f="Mexico" onclick="setF(this)">Mexico</button>
-      <button class="fb" data-f="Panama" onclick="setF(this)">Panama</button>
-      <button class="fb" data-f="Republica Dominicana" onclick="setF(this)">Republica Dominicana</button>
+      <button class="fb all-btn on" data-f="ALL" onclick="setF(this)">🌎 Todos</button>
+    <button class="fb" data-f="Brasil" onclick="setF(this)">Brasil</button>
+    <button class="fb" data-f="Colombia" onclick="setF(this)">Colombia</button>
+    <button class="fb" data-f="Mexico" onclick="setF(this)">Mexico</button>
+    <button class="fb" data-f="Panama" onclick="setF(this)">Panama</button>
+    <button class="fb" data-f="Republica Dominicana" onclick="setF(this)">Republica Dominicana</button>
     </div>
     <div class="count" id="cnt"></div>
     <div class="grid" id="grid"></div>
   </div>
 
-  <!-- CADENAS DESTACADAS -->
+  <!-- CADENAS -->
   <div class="page" id="cadenas">
     <nav class="chain-subnav">
-      <button class="tab chain-tab on" data-chain="Grupo Brisas" onclick="showChain(this.dataset.chain,this)">🌎 Grupo Brisas</button>
-      <button class="tab chain-tab" data-chain="Palace Resorts" onclick="showChain(this.dataset.chain,this)">🌊 Palace Resorts</button>
-      <button class="tab chain-tab" data-chain="Princess Hotels & Resorts" onclick="showChain(this.dataset.chain,this)">🏖️ Princess Hotels & Resorts</button>
-      <button class="tab chain-tab" data-chain="Grupo Hotelero Santa Fe" onclick="showChain(this.dataset.chain,this)">🏝️ Grupo Hotelero Santa Fe</button>
-      <button class="tab chain-tab" data-chain="Estelar Hoteles" onclick="showChain(this.dataset.chain,this)">⭐ Estelar Hoteles</button>
-      <button class="tab chain-tab" data-chain="Hyatt Inclusive Collection" onclick="showChain(this.dataset.chain,this)">🏨 Hyatt Inclusive Collection</button>
-      <button class="tab chain-tab" data-chain="Park Royal Hotels and Resorts" onclick="showChain(this.dataset.chain,this)">🌟 Park Royal Hotels and Resorts</button>
-      <button class="tab chain-tab" data-chain="Aviva Hotels" onclick="showChain(this.dataset.chain,this)">🔑 Aviva Hotels</button>
+      <button class="tab chain-tab on" data-chain="Grupo Brisas" onclick="showChain(this.dataset.chain,this)">🏨 Grupo Brisas</button>
+      <button class="tab chain-tab" data-chain="Park Royal Hotels and Resorts" onclick="showChain(this.dataset.chain,this)">🌊 Park Royal Hotels and Resorts</button>
+      <button class="tab chain-tab" data-chain="Hyatt Inclusive Collection" onclick="showChain(this.dataset.chain,this)">🏖️ Hyatt Inclusive Collection</button>
+      <button class="tab chain-tab" data-chain="Aviva Hotels" onclick="showChain(this.dataset.chain,this)">🏝️ Aviva Hotels</button>
+      <button class="tab chain-tab" data-chain="Grupo Hotelero Santa Fe" onclick="showChain(this.dataset.chain,this)">⭐ Grupo Hotelero Santa Fe</button>
+      <button class="tab chain-tab" data-chain="Estelar Hoteles" onclick="showChain(this.dataset.chain,this)">🌟 Estelar Hoteles</button>
+      <button class="tab chain-tab" data-chain="Hoteles Solaris" onclick="showChain(this.dataset.chain,this)">🎯 Hoteles Solaris</button>
+      <button class="tab chain-tab" data-chain="Solmar Hotels & Resorts" onclick="showChain(this.dataset.chain,this)">🔥 Solmar Hotels & Resorts</button>
+      <button class="tab chain-tab" data-chain="Fioreze" onclick="showChain(this.dataset.chain,this)">💎 Fioreze</button>
+      <button class="tab chain-tab" data-chain="Princess Hotels & Resorts" onclick="showChain(this.dataset.chain,this)">🌎 Princess Hotels & Resorts</button>
+      <button class="tab chain-tab" data-chain="Hoteles Buenaventura" onclick="showChain(this.dataset.chain,this)">🏆 Hoteles Buenaventura</button>
+      <button class="tab chain-tab" data-chain="Ocean hotels & Resorts By H10" onclick="showChain(this.dataset.chain,this)">🌴 Ocean hotels & Resorts By H10</button>
+      <button class="tab chain-tab" data-chain="Guadalajara Plaza" onclick="showChain(this.dataset.chain,this)">✨ Guadalajara Plaza</button>
     </nav>
     <div id="chains-container"></div>
-  </div>
-
-  <!-- TOP OFERTAS W43 -->
-  <div class="page" id="top">
-    <div class="pal-banner">
-      <div class="pal-content">
-        <div class="pal-badge">&#11088; Campa&ntilde;a Destacada W43</div>
-        <div class="pal-title">GRANDES AHORROS<br><span>Octubre 2026</span></div>
-        <div class="pal-sub">
-          <strong>Hasta 65% de descuento</strong> en los mejores hoteles y resorts.<br>
-          Reservas: 19 oct 2026 al 29 oct 2026 &middot; Viaje seg&uacute;n cada oferta
-        </div>
-        <div class="pal-destinos">
-          <div class="pal-dest-title">Top destinos por descuento</div>
-          <div class="pal-dest-grid">
-          <div class="pal-dest-item">Cancun <strong style="color:#E8890A">–65%</strong></div>
-          <div class="pal-dest-item">Cancun <strong style="color:#E8890A">–64%</strong></div>
-          <div class="pal-dest-item">Cancun <strong style="color:#E8890A">–64%</strong></div>
-          <div class="pal-dest-item">Cancun <strong style="color:#E8890A">–64%</strong></div>
-          <div class="pal-dest-item">Panama <strong style="color:#E8890A">–63%</strong></div>
-          <div class="pal-dest-item">Cancun <strong style="color:#E8890A">–62%</strong></div>
-          <div class="pal-dest-item">Cancun <strong style="color:#E8890A">–61%</strong></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="dg" id="top-grid"></div>
   </div>
 
 </main>
@@ -213,324 +177,135 @@ footer p{color:rgba(255,255,255,.4);font-size:.76rem}
 </footer>
 
 <script>
-const DATA = [
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Oasis Hotels & Resorts',hotel:'The Grand Oasis Cancún All Inclusive',dto:65,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Oasis Hotels & Resorts',hotel:'Grand Oasis Palm All Inclusive',dto:64,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Oasis Hotels & Resorts',hotel:'The Pyramid Cancun by Oasis - Gourmet Premium All Inclusive',dto:64,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Oasis Hotels & Resorts',hotel:'The Sens Cancun by Oasis',dto:64,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Panama, Panama',pais:'Panama',cadena:'Hard Rock Hotels',hotel:'Megapolis Hotel Panamá',dto:63,bwd:'19 oct 2026',bwh:'28 oct 2026',twd:'19 oct 2026',twh:'31 oct 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Oasis Hotels & Resorts',hotel:'Oasis Palm',dto:62,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Wyndham Hotels & Resorts',hotel:'Wyndham Grand Cancun All-Inclusive Resort & Villas',dto:61,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Hoteles Solaris',hotel:'GR Solaris Caribe Adults Only - All Inclusive',dto:60,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'21 mar 2027',twh:'03 abr 2027'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'Krystal Urban Cancún & Beach Club',dto:60,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'25 dic 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Hoteles Solaris',hotel:'GR Solaris Cancún and Spa All Inclusive',dto:59,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'21 mar 2027',twh:'04 abr 2027'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Hoteles Solaris',hotel:'Royal Solaris Cancun - All Inclusive',dto:59,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'21 mar 2027',twh:'04 abr 2027'},
-{destino:'San Jose Del Cabo, Mexico',pais:'Mexico',cadena:'Hoteles Solaris',hotel:'GR Solaris Lighthouse',dto:58,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Princess Hotels & Resorts',hotel:'Platinum Yucatan Princess Adults Only - All inclusive',dto:51,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'03 ene 2027',twh:'01 feb 2027'},
-{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Playacar Palace All Inclusive',dto:49,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Sun Palace Cancun - Adults Only - All-inclusive',dto:49,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'Mahekal Beach Resort & Spa',dto:48,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 dic 2026'},
-{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Princess Hotels & Resorts',hotel:'Princess Family Club Bavaro - All Inclusive',dto:48,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'San Jose Del Cabo, Mexico',pais:'Mexico',cadena:'Hoteles Solaris',hotel:'Royal Solaris Los Cabos All Inclusive',dto:48,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'17 nov 2026'},
-{destino:'Puerto Plata, Republica Dominicana',pais:'Republica Dominicana',cadena:'Viva Wydham All Inclusive Resorts',hotel:'Viva Heavens by Wyndham, A Trademark Resort',dto:48,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'01 nov 2026',twh:'18 nov 2026'},
-{destino:'Las Terrenas, Republica Dominicana',pais:'Republica Dominicana',cadena:'Viva Wydham All Inclusive Resorts',hotel:'Viva V Samana by Wyndham, A Trademark Adults Resort',dto:48,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Beach Palace Family Resort & Spa',dto:46,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Cozumel, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Cozumel Palace All Inclusive',dto:46,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Ixtapa Zihuatanejo, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'Krystal Ixtapa All Inclusive',dto:46,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'03 ene 2027'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Moon Palace Cancún - All Inclusive',dto:46,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Ocho Rios, Jamaica',pais:'Jamaica',cadena:'Palace Resorts',hotel:'Moon Palace Jamaica – All Inclusive',dto:46,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Moon Palace Nizuc',dto:46,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Bayahibe, Republica Dominicana',pais:'Republica Dominicana',cadena:'Viva Wydham All Inclusive Resorts',hotel:'Viva Dominicus Palace by Wyndham',dto:46,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'06 nov 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'Krystal Cancún',dto:45,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'25 dic 2026'},
-{destino:'Cabo San Lucas, Mexico',pais:'Mexico',cadena:'PAM Hotels',hotel:'Nobu Hotel Los Cabos',dto:45,bwd:'19 oct 2026',bwh:'24 oct 2026',twd:'19 oct 2026',twh:'19 dic 2026'},
-{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'PAM Hotels',hotel:'Unico Hotel Riviera Nayarit - All Inclusive - Adults Only',dto:45,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 dic 2026'},
-{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Princess Hotels & Resorts',hotel:'Grand Riviera Princess All Suites Resort & Spa',dto:44,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'03 ene 2027',twh:'01 feb 2027'},
-{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Princess Hotels & Resorts',hotel:'Grand Sunset Princess - All Inclusive',dto:44,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'03 ene 2027',twh:'01 feb 2027'},
-{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Palace Resorts',hotel:'Moon Palace The Grand - Punta Cana - All Inclusive',dto:44,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Guadalajara Plaza',hotel:'Sunset Plaza Beach Resort Puerto Vallarta All Inclusive',dto:44,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'13 nov 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'Krystal Grand Cancun - All Inclusive',dto:43,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'20 mar 2027',twh:'28 mar 2027'},
-{destino:'Cartagena De Indias, Colombia',pais:'Colombia',cadena:'Las Americas Hotels Group',hotel:'Americas Torre del Mar',dto:41,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'28 oct 2026'},
-{destino:'Panama, Panama',pais:'Panama',cadena:'Decameron Hotels & Resorts',hotel:'Grand Decameron Panamá, A Trademark All-Inclusive Resort',dto:40,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'28 ago 2027',twh:'27 sep 2027'},
-{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'Krystal Puerto Vallarta',dto:40,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'03 ene 2027',twh:'25 mar 2027'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Nizuc Resort and Spa',dto:40,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'26 nov 2026'},
-{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Guadalajara Plaza',hotel:'Plaza Pelicanos Club Beach Resort',dto:40,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'03 ene 2027',twh:'30 ene 2027'},
-{destino:'San Jose Del Cabo, Mexico',pais:'Mexico',cadena:'Posada Real',hotel:'Posada Real Los Cabos',dto:40,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Ocean hotels & Resorts By H10',hotel:'El Beso Adults Only At Ocean El Faro - All Inclusive',dto:39,bwd:'19 oct 2026',bwh:'28 oct 2026',twd:'01 nov 2026',twh:'31 dic 2026'},
-{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Princess Hotels & Resorts',hotel:'Family Club by Grand Riviera Princess - All Inclusive',dto:39,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Ocean hotels & Resorts By H10',hotel:'Ocean El Faro - All Inclusive',dto:39,bwd:'19 oct 2026',bwh:'28 oct 2026',twd:'01 nov 2026',twh:'31 dic 2026'},
-{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Guadalajara Plaza',hotel:'Plaza Pelicanos Grand Beach Resort',dto:39,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'03 ene 2027',twh:'29 ene 2027'},
-{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Princess Hotels & Resorts',hotel:'Grand Bavaro Princess - All Inclusive',dto:37,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Ciudad De Mexico, Mexico',pais:'Mexico',cadena:'Grupo Diestra',hotel:'JW Marriott Hotel Mexico City Santa Fe',dto:37,bwd:'19 oct 2026',bwh:'28 oct 2026',twd:'19 oct 2026',twh:'29 oct 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Le Blanc Spa Resort Cancun- Adults Only - All Inclusive',dto:37,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Cabo San Lucas, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Le Blanc Spa Resort Los Cabos - Adults Only - All Inclusive',dto:37,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Accor Hotels',hotel:'Marival Distinct All-Inclusive Handwritten Collection',dto:37,bwd:'19 oct 2026',bwh:'28 oct 2026',twd:'19 oct 2026',twh:'25 nov 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Moon Palace The Grand Cancun - All inclusive',dto:37,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Sandos Hotels & Resorts',hotel:'Palmaïa-The House of AïA: All Inclusive Wellness Resort',dto:36,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'03 ene 2027',twh:'01 may 2027'},
-{destino:'Guadalajara, Mexico',pais:'Mexico',cadena:'Hoteles Mision',hotel:'Misión Guadalajara Carlton',dto:35,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 ene 2027'},
-{destino:'Punta De Mita, Mexico',pais:'Mexico',cadena:'Accor Hotels',hotel:'Armony Resort All-Inclusive MGallery Collection',dto:34,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'Krystal Grand Puerto Vallarta',dto:34,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Nuevo Vallarta, Mexico',pais:'Mexico',cadena:'Accor Hotels',hotel:'Marival Emotions Resort All Inclusive - Future Mercure',dto:34,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'The Hacienda at Krystal Grand Puerto Vallarta',dto:34,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Cabo San Lucas, Mexico',pais:'Mexico',cadena:'Solmar Hotels & Resorts',hotel:'Grand Solmar Pacific Dunes Resort, Golf & Spa',dto:33,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'21 dic 2026'},
-{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Hoteles Buenaventura',hotel:'Buenaventura Grand Hotel & Great Moments',dto:32,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'20 dic 2026',twh:'07 ene 2027'},
-{destino:'Merida, Mexico',pais:'Mexico',cadena:'Hoteles BAWA',hotel:'Casa Zafiro Hotel - Adults Only, Mérida',dto:32,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Hoteles Buenaventura',hotel:'Hacienda Buenaventura Hotel & Mexican Charm',dto:32,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'20 dic 2026',twh:'07 ene 2027'},
-{destino:'Panama, Panama',pais:'Panama',cadena:'Las Americas Hotels Group',hotel:'Las Americas Golden Tower Panamá',dto:32,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'21 dic 2026'},
-{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Princess Hotels & Resorts',hotel:'Tropical Deluxe Princess - All Inclusive',dto:32,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Hoteles Buenaventura',hotel:'Villa Premiere Boutique Hotel & Romantic Getaway',dto:32,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'20 dic 2026',twh:'07 ene 2027'},
-{destino:'San Andres, Colombia',pais:'Colombia',cadena:'Oxohotel',hotel:'Grand Sirenis San Andrés',dto:31,bwd:'19 oct 2026',bwh:'21 oct 2026',twd:'19 oct 2026',twh:'23 dic 2026'},
-{destino:'Juan Dolio, Republica Dominicana',pais:'Republica Dominicana',cadena:'Hodelpa Hotels',hotel:'Emotions by Hodelpa - Juan Dolio - All inclusive',dto:30,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'06 nov 2026'},
-{destino:'Puerto Plata, Republica Dominicana',pais:'Republica Dominicana',cadena:'Hodelpa Hotels',hotel:'Emotions by Hodelpa Puerto Plata - All Inclusive',dto:30,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'23 dic 2026'},
-{destino:'Bella Vista, Republica Dominicana',pais:'Republica Dominicana',cadena:'Hodelpa Hotels',hotel:'Hodelpa Gran Almirante Hotel & Casino',dto:30,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Ciudad De Mexico, Mexico',pais:'Mexico',cadena:'Wyndham Hotels & Resorts',hotel:'BelAir Unique a Wyndham Hotel',dto:28,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'22 oct 2026',twh:'29 oct 2026'},
-{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Princess Hotels & Resorts',hotel:'Caribe Deluxe Princess - All Inclusive',dto:28,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Cabo San Lucas, Mexico',pais:'Mexico',cadena:'Solmar Hotels & Resorts',hotel:'Playa Grande Resort and Grand Spa',dto:28,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
-{destino:'Cabo San Lucas, Mexico',pais:'Mexico',cadena:'Solmar Hotels & Resorts',hotel:'Grand Solmar Land End Resort & Spa',dto:26,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
-{destino:'Cabo San Lucas, Mexico',pais:'Mexico',cadena:'Solmar Hotels & Resorts',hotel:'Solmar Resort',dto:26,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
-{destino:'Riviera Maya, Mexico',pais:'Mexico',cadena:'Lomas Hospitality',hotel:'El Dorado Maroma, All & More Inclusive - Adults Only',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'01 jun 2027',twh:'30 jun 2027'},
-{destino:'Irapuato, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Galeria Plaza Irapuato',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'17 dic 2026'},
-{destino:'Leon, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Galeria Plaza Leon',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'17 dic 2026'},
-{destino:'Monterrey, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Galeria Plaza Monterrey',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 jul 2027'},
-{destino:'Ciudad De Mexico, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Galeria Plaza Reforma',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 jul 2027'},
-{destino:'Ciudad De Mexico, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Galeria Plaza San Jeronimo',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 jul 2027'},
-{destino:'Veracruz, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Galería Plaza Veracruz by Brisas',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 jul 2027'},
-{destino:'Queretaro, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Hacienda Jurica by Brisas',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 jul 2027'},
-{destino:'Acapulco, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Las Brisas Acapulco',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 jul 2027'},
-{destino:'Huatulco, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Las Brisas Huatulco',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 jul 2027'},
-{destino:'Ixtapa Zihuatanejo, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Las Brisas Ixtapa',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'20 dic 2026'},
-{destino:'Merida, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Las Brisas Merida',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'17 dic 2026'},
-{destino:'Manzanillo, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Las Hadas By Brisas',dto:25,bwd:'19 oct 2026',bwh:'21 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Princess Hotels & Resorts',hotel:'Punta Cana Princess Adults Only - All Inclusive',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Gramado, Brasil',pais:'Brasil',cadena:'GJP',hotel:'Wish Serrano Resort',dto:25,bwd:'19 oct 2026',bwh:'28 oct 2026',twd:'19 oct 2026',twh:'26 oct 2026'},
-{destino:'Isla De Baru, Colombia',pais:'Colombia',cadena:'Decameron Hotels & Resorts',hotel:'Decameron Barú All Inclusive',dto:24,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
-{destino:'San Andres, Colombia',pais:'Colombia',cadena:'Decameron Hotels & Resorts',hotel:'Decameron Isleño All Inclusive',dto:24,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
-{destino:'San Andres, Colombia',pais:'Colombia',cadena:'Decameron Hotels & Resorts',hotel:'Decameron Los Delfines All Inclusive',dto:24,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
-{destino:'Maceio, Brasil',pais:'Brasil',cadena:'Brisa Hotéis',hotel:'Hotel Brisa Suites',dto:23,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Maceio, Brasil',pais:'Brasil',cadena:'Brisa Hotéis',hotel:'Hotel Brisa Tower Jatiúca',dto:23,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Pocos De Caldas, Brasil',pais:'Brasil',cadena:'Nacional Inn',hotel:'Cassino All Inclusive Resort Poços de Caldas By Nacional Inn',dto:22,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
-{destino:'Ixtapa Zihuatanejo, Mexico',pais:'Mexico',cadena:'Hyatt Inclusive Collection',hotel:'Sunscape Dorado Pacifico Ixtapa Resort and Spa- All Inclusive',dto:21,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'18 dic 2026'},
-{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Wyndham Hotels & Resorts',hotel:'Wyndham Garden Playa del Carmen',dto:21,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'21 dic 2026'},
-{destino:'Fortaleza, Brasil',pais:'Brasil',cadena:'Carmel Hotéis',hotel:'Carmel Charme Resort - Aquiraz',dto:20,bwd:'19 oct 2026',bwh:'24 oct 2026',twd:'19 oct 2026',twh:'27 oct 2026'},
-{destino:'Fortaleza, Brasil',pais:'Brasil',cadena:'Carmel Hotéis',hotel:'Carmel Cumbuco Resort',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Gramado, Brasil',pais:'Brasil',cadena:'Gramado Parks',hotel:'Exclusive Gramado Hotel & Spa by Gramado Parks',dto:20,bwd:'19 oct 2026',bwh:'20 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Park Royal Hotels and Resorts',hotel:'Grand Park Royal Cancún',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
-{destino:'Cozumel, Mexico',pais:'Mexico',cadena:'Park Royal Hotels and Resorts',hotel:'Grand Park Royal Cozumel',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
-{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Park Royal Hotels and Resorts',hotel:'Grand Park Royal Puerto Vallarta',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
-{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Sirenis Hotels & Resorts',hotel:'Grand Sirenis Punta Cana Resort & Aquagames – All Inclusive',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Riviera Maya, Mexico',pais:'Mexico',cadena:'Sirenis Hotels & Resorts',hotel:'Grand Sirenis Riviera Maya Resort & Spa - All Inclusive',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Florianopolis, Brasil',pais:'Brasil',cadena:'Intercity Hotels',hotel:'Intercity Florianópolis',dto:20,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
-{destino:'Itupeva, Brasil',pais:'Brasil',cadena:'Intercity Hotels',hotel:'Intercity Itupeva',dto:20,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'31 oct 2026'},
-{destino:'Acapulco, Mexico',pais:'Mexico',cadena:'Park Royal Hotels and Resorts',hotel:'Park Royal Beach Acapulco - All Inclusive',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Park Royal Hotels and Resorts',hotel:'Park Royal Beach Cancun',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
-{destino:'Ixtapa Zihuatanejo, Mexico',pais:'Mexico',cadena:'Park Royal Hotels and Resorts',hotel:'Park Royal Beach Ixtapa',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
-{destino:'Rio Quente, Brasil',pais:'Brasil',cadena:'Aviva Hotels',hotel:'Rio Quente Cristal Resorts',dto:20,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'20 oct 2026',twh:'01 ene 2027'},
-{destino:'Rio Quente, Brasil',pais:'Brasil',cadena:'Aviva Hotels',hotel:'Rio Quente Resorts - Hotel Pousada',dto:20,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'20 oct 2026',twh:'01 ene 2027'},
-{destino:'Rio Quente, Brasil',pais:'Brasil',cadena:'Aviva Hotels',hotel:'Rio Quente Resorts – Hotel Giardino',dto:20,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'24 dic 2026',twh:'01 ene 2027'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Park Royal Hotels and Resorts',hotel:'Royal Select at Grand Park Royal Cancún-All Inclusive-Adults Only',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
-{destino:'Costa Do Sauipe, Brasil',pais:'Brasil',cadena:'Aviva Hotels',hotel:'Sauipe Mar Premium - All Inclusive',dto:20,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'20 oct 2026',twh:'01 ene 2027'},
-{destino:'Costa Do Sauipe, Brasil',pais:'Brasil',cadena:'Aviva Hotels',hotel:'Sauipe Sol Grand Premium – All Inclusive',dto:20,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'20 oct 2026',twh:'01 ene 2027'},
-{destino:'Costa Do Sauipe, Brasil',pais:'Brasil',cadena:'Aviva Hotels',hotel:'Sauipe Terra Resort - All Inclusive',dto:20,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'20 oct 2026',twh:'01 ene 2027'},
-{destino:'Cartagena De Indias, Colombia',pais:'Colombia',cadena:'Estelar Hoteles',hotel:'Estelar Playa Manzanillo - All Inclusive',dto:18,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'22 oct 2026',twh:'31 oct 2026'},
-{destino:'Santa Marta, Colombia',pais:'Colombia',cadena:'Estelar Hoteles',hotel:'Estelar Santamar Hotel',dto:18,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'19 oct 2026',twh:'17 dic 2026'},
-{destino:'Medellin, Colombia',pais:'Colombia',cadena:'Estelar Hoteles',hotel:'Estelar Square',dto:18,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'02 mar 2027',twh:'15 mar 2027'},
-{destino:'Villavicencio, Colombia',pais:'Colombia',cadena:'Estelar Hoteles',hotel:'Estelar Villavicencio Hotel & Centro de Convenciones',dto:18,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'19 oct 2026',twh:'31 oct 2026'},
-{destino:'Medellin, Colombia',pais:'Colombia',cadena:'Estelar Hoteles',hotel:'Hotel Estelar Blue',dto:18,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'19 oct 2026',twh:'22 nov 2026'},
-{destino:'Barranquilla, Colombia',pais:'Colombia',cadena:'Estelar Hoteles',hotel:'Hotel Estelar En Alto Prado',dto:18,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'19 oct 2026',twh:'17 nov 2026'},
-{destino:'Bogota, Colombia',pais:'Colombia',cadena:'Estelar Hoteles',hotel:'Hotel Estelar Parque De La 93',dto:18,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'01 nov 2026',twh:'17 nov 2026'},
-{destino:'Maceio, Brasil',pais:'Brasil',cadena:'MME Hotéis',hotel:'Acqua Prime',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Belo Horizonte, Brasil',pais:'Brasil',cadena:'Bourbon',hotel:'Bourbon Hotel Savassi | Belo Horizonte',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'21 oct 2026',twh:'31 oct 2026'},
-{destino:'Balneario Camboriu, Brasil',pais:'Brasil',cadena:'Slaviero Hotéis',hotel:'Brut by Slaviero Hotéis',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Ciudad De Mexico, Mexico',pais:'Mexico',cadena:'HS Hotsson',hotel:'HS HOTSSON Long Stay CDMX Condesa Sur',dto:15,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'19 oct 2026',twh:'26 oct 2026'},
-{destino:'Bogota, Colombia',pais:'Colombia',cadena:'Em Hotels',hotel:'Hotel Andes Plaza',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'08 dic 2026',twh:'18 dic 2026'},
-{destino:'Sao Jose Do Rio Preto, Brasil',pais:'Brasil',cadena:'Intercity Hotels',hotel:'Hotel Nacional de Rio Preto - Distributed By Intercity',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Curitiba, Brasil',pais:'Brasil',cadena:'Intercity Hotels',hotel:'Intercity Curitiba - Centro Cívico',dto:15,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Porto Alegre, Brasil',pais:'Brasil',cadena:'Intercity Hotels',hotel:'Intercity Porto Alegre Praia de Belas',dto:15,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Pindamonhangaba, Brasil',pais:'Brasil',cadena:'Intercity Hotels',hotel:'Intercity Pátio Pinda Hotel & Resort',dto:15,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'31 oct 2026'},
-{destino:'Maceio, Brasil',pais:'Brasil',cadena:'MME Hotéis',hotel:'Ipioca Beach Resort Maceió',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Maceio, Brasil',pais:'Brasil',cadena:'MME Hotéis',hotel:'Maceió Mar Resort All Inclusive',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Tlaquepaque, Mexico',pais:'Mexico',cadena:'Choice Hotels',hotel:'Radisson Hotel Tapatio Guadalajara',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Curitiba, Brasil',pais:'Brasil',cadena:'Bourbon',hotel:'Rio Hotel by Bourbon Batel | Curitiba',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Campinas, Brasil',pais:'Brasil',cadena:'Bourbon',hotel:'Rio Hotel by Bourbon Campinas',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'23 oct 2026',twh:'01 nov 2026'},
-{destino:'Praia Da Pipa, Brasil',pais:'Brasil',cadena:'Only Hotéis',hotel:'Xamã Senses - Hotel Pousada',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Hyatt Inclusive Collection',hotel:'Secrets The Vine Cancun - All Inclusive - Adults Only',dto:14,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'22 ene 2027',twh:'01 feb 2027'},
-{destino:'Riviera Maya, Mexico',pais:'Mexico',cadena:'Hyatt Inclusive Collection',hotel:'Dreams Aventuras Riviera Maya - All Inclusive',dto:12,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 ene 2027'},
-{destino:'Cali, Colombia',pais:'Colombia',cadena:'Marriott International',hotel:'Sonesta Hotel Cali',dto:12,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'18 dic 2026',twh:'25 dic 2026'},
-{destino:'Atibaia, Brasil',pais:'Brasil',cadena:'Bourbon',hotel:'Bourbon Resort Atibaia',dto:10,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
-{destino:'Salvador, Brasil',pais:'Brasil',cadena:'Catussaba Hotéis e Resorts',hotel:'Catussaba Suítes Resort',dto:10,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
-{destino:'San Pablo, Brasil',pais:'Brasil',cadena:'DELPLAZA Hotels',hotel:'DELPLAZA Excelsior São Paulo - By Monreale',dto:10,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'28 oct 2026'},
-{destino:'San Pablo, Brasil',pais:'Brasil',cadena:'DELPLAZA Hotels',hotel:'DELPLAZA Marabá São Paulo',dto:10,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'28 oct 2026'},
-{destino:'Olimpia, Brasil',pais:'Brasil',cadena:'Enjoy Hotels',hotel:'Enjoy Olimpia Park Resort',dto:10,bwd:'19 oct 2026',bwh:'24 oct 2026',twd:'19 oct 2026',twh:'27 oct 2026'},
-{destino:'Gramado, Brasil',pais:'Brasil',cadena:'Fioreze',hotel:'Hotel Fioreze Centro',dto:10,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 nov 2026',twh:'23 dic 2026'},
-{destino:'Gramado, Brasil',pais:'Brasil',cadena:'Fioreze',hotel:'Hotel Fioreze Primo',dto:10,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'19 dic 2026'},
-{destino:'Gramado, Brasil',pais:'Brasil',cadena:'Fioreze',hotel:'Hotel Fioreze Quero Quero',dto:10,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'17 ene 2027',twh:'26 mar 2027'},
-{destino:'Florianopolis, Brasil',pais:'Brasil',cadena:'Porto Sol Hotéis',hotel:'Hotel Porto Sol Ingleses',dto:10,bwd:'19 oct 2026',bwh:'28 oct 2026',twd:'19 oct 2026',twh:'31 oct 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Meliá',hotel:'Melia Casa Maya Cancun',dto:10,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'08 nov 2026',twh:'25 nov 2026'},
-{destino:'San Pablo, Brasil',pais:'Brasil',cadena:'DELPLAZA Hotels',hotel:'Monreale Lifestyle Higienópolis São Paulo',dto:10,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Indaiatuba, Brasil',pais:'Brasil',cadena:'Bourbon',hotel:'Rio Hotel by Bourbon Indaiatuba',dto:10,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Hyatt Inclusive Collection',hotel:'Secrets Playa Blanca Costa Mujeres',dto:10,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'15 dic 2026',twh:'01 abr 2027'},
-{destino:'Huatulco, Mexico',pais:'Mexico',cadena:'Hyatt Inclusive Collection',hotel:'Dreams Huatulco Resort & Spa',dto:9,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'01 ene 2027'},
-{destino:'Huatulco, Mexico',pais:'Mexico',cadena:'Hyatt Inclusive Collection',hotel:'Secrets Huatulco Resort And Spa',dto:9,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'31 dic 2026'},
-{destino:'Tulum, Mexico',pais:'Mexico',cadena:'Hyatt Inclusive Collection',hotel:'Dreams Tulum Resort and Spa',dto:5,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'31 oct 2026'},
-{destino:'Brasilia, Brasil',pais:'Brasil',cadena:'Hotelaria Brasil',hotel:'Ramada By Wyndham Brasilia Alvorada',dto:5,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
-{destino:'Brasilia, Brasil',pais:'Brasil',cadena:'Hotelaria Brasil',hotel:'Tryp by Wyndham Brasília Nações',dto:5,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'}
-];
+const DATA=[{"Destino":"Cancun, Mexico","Cadena":"Hoteles Solaris","Hotel":"GR Solaris Caribe Adults Only - All Inclusive","Desc":60,"BW":"19/10/2026 – 29/10/2026","TW":"21/03/2027 – 04/03/2027","Pais":"Mexico"},{"Destino":"Cancun, Mexico","Cadena":"Grupo Hotelero Santa Fe","Hotel":"Krystal Urban Cancún & Beach Club","Desc":60,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 25/12/2026","Pais":"Mexico"},{"Destino":"Cancun, Mexico","Cadena":"Hoteles Solaris","Hotel":"GR Solaris Cancún and Spa All Inclusive","Desc":59,"BW":"19/10/2026 – 29/10/2026","TW":"21/03/2027 – 04/04/2027","Pais":"Mexico"},{"Destino":"Cancun, Mexico","Cadena":"Hoteles Solaris","Hotel":"Royal Solaris Cancun - All Inclusive","Desc":59,"BW":"19/10/2026 – 29/10/2026","TW":"21/03/2027 – 04/04/2027","Pais":"Mexico"},{"Destino":"Playa Del Carmen, Mexico","Cadena":"Princess Hotels & Resorts","Hotel":"Platinum Yucatan Princess Adults Only - All inclusive","Desc":51,"BW":"19/10/2026 – 29/10/2026","TW":"01/03/2027 – 02/01/2027","Pais":"Mexico"},{"Destino":"Playa Del Carmen, Mexico","Cadena":"Grupo Hotelero Santa Fe","Hotel":"Mahekal Beach Resort & Spa","Desc":48,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 12/01/2026","Pais":"Mexico"},{"Destino":"San Jose Del Cabo, Mexico","Cadena":"Hoteles Solaris","Hotel":"Royal Solaris Los Cabos All Inclusive","Desc":48,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 17/11/2026","Pais":"Mexico"},{"Destino":"Puerto Plata, Republica Dominicana","Cadena":"Viva Wydham All Inclusive Resorts","Hotel":"Viva Heavens by Wyndham, A Trademark Resort","Desc":48,"BW":"19/10/2026 – 25/10/2026","TW":"11/01/2026 – 18/11/2026","Pais":"Republica Dominicana"},{"Destino":"Ixtapa Zihuatanejo, Mexico","Cadena":"Grupo Hotelero Santa Fe","Hotel":"Krystal Ixtapa All Inclusive","Desc":46,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 01/03/2027","Pais":"Mexico"},{"Destino":"Cancun, Mexico","Cadena":"Grupo Hotelero Santa Fe","Hotel":"Krystal Cancún","Desc":45,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 25/12/2026","Pais":"Mexico"},{"Destino":"Playa Del Carmen, Mexico","Cadena":"Princess Hotels & Resorts","Hotel":"Grand Riviera Princess All Suites Resort & Spa","Desc":44,"BW":"19/10/2026 – 29/10/2026","TW":"01/03/2027 – 02/01/2027","Pais":"Mexico"},{"Destino":"Playa Del Carmen, Mexico","Cadena":"Princess Hotels & Resorts","Hotel":"Grand Sunset Princess - All Inclusive","Desc":44,"BW":"19/10/2026 – 29/10/2026","TW":"01/03/2027 – 02/01/2027","Pais":"Mexico"},{"Destino":"Cancun, Mexico","Cadena":"Grupo Hotelero Santa Fe","Hotel":"Krystal Grand Cancun - All Inclusive","Desc":43,"BW":"19/10/2026 – 29/10/2026","TW":"20/03/2027 – 28/03/2027","Pais":"Mexico"},{"Destino":"Panama, Panama","Cadena":"Decameron Hotels & Resorts","Hotel":"Grand Decameron Panamá, A Trademark All-Inclusive Resort","Desc":40,"BW":"19/10/2026 – 31/10/2026","TW":"28/08/2027 – 27/09/2027","Pais":"Panama"},{"Destino":"Puerto Vallarta, Mexico","Cadena":"Grupo Hotelero Santa Fe","Hotel":"Krystal Puerto Vallarta","Desc":40,"BW":"19/10/2026 – 29/10/2026","TW":"01/03/2027 – 25/03/2027","Pais":"Mexico"},{"Destino":"Cancun, Mexico","Cadena":"Grupo Brisas","Hotel":"Nizuc Resort and Spa","Desc":40,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 26/11/2026","Pais":"Mexico"},{"Destino":"Puerto Vallarta, Mexico","Cadena":"Guadalajara Plaza","Hotel":"Plaza Pelicanos Club Beach Resort","Desc":40,"BW":"19/10/2026 – 29/10/2026","TW":"01/03/2027 – 30/01/2027","Pais":"Mexico"},{"Destino":"Punta Cana, Republica Dominicana","Cadena":"Ocean hotels & Resorts By H10","Hotel":"El Beso Adults Only At Ocean El Faro - All Inclusive","Desc":39,"BW":"19/10/2026 – 28/10/2026","TW":"11/01/2026 – 31/12/2026","Pais":"Republica Dominicana"},{"Destino":"Punta Cana, Republica Dominicana","Cadena":"Ocean hotels & Resorts By H10","Hotel":"Ocean El Faro - All Inclusive","Desc":39,"BW":"19/10/2026 – 28/10/2026","TW":"11/01/2026 – 31/12/2026","Pais":"Republica Dominicana"},{"Destino":"Puerto Vallarta, Mexico","Cadena":"Guadalajara Plaza","Hotel":"Plaza Pelicanos Grand Beach Resort","Desc":39,"BW":"19/10/2026 – 29/10/2026","TW":"01/03/2027 – 29/01/2027","Pais":"Mexico"},{"Destino":"Puerto Vallarta, Mexico","Cadena":"Accor Hotels","Hotel":"Marival Distinct All-Inclusive Handwritten Collection","Desc":37,"BW":"19/10/2026 – 28/10/2026","TW":"19/10/2026 – 25/11/2026","Pais":"Mexico"},{"Destino":"Playa Del Carmen, Mexico","Cadena":"Sandos Hotels & Resorts","Hotel":"Palmaïa-The House of AïA: All Inclusive Wellness Resort","Desc":36,"BW":"19/10/2026 – 29/10/2026","TW":"01/03/2027 – 05/01/2027","Pais":"Mexico"},{"Destino":"Guadalajara, Mexico","Cadena":"Hoteles Mision","Hotel":"Misión Guadalajara Carlton","Desc":35,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 01/01/2027","Pais":"Mexico"},{"Destino":"Cabo San Lucas, Mexico","Cadena":"Solmar Hotels & Resorts","Hotel":"Grand Solmar Pacific Dunes Resort, Golf & Spa","Desc":33,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 21/12/2026","Pais":"Mexico"},{"Destino":"Puerto Vallarta, Mexico","Cadena":"Hoteles Buenaventura","Hotel":"Buenaventura Grand Hotel & Great Moments","Desc":32,"BW":"19/10/2026 – 29/10/2026","TW":"20/12/2026 – 01/07/2027","Pais":"Mexico"},{"Destino":"Puerto Vallarta, Mexico","Cadena":"Hoteles Buenaventura","Hotel":"Hacienda Buenaventura Hotel & Mexican Charm","Desc":32,"BW":"19/10/2026 – 29/10/2026","TW":"20/12/2026 – 01/07/2027","Pais":"Mexico"},{"Destino":"Panama, Panama","Cadena":"Las Americas Hotels Group","Hotel":"Las Americas Golden Tower Panamá","Desc":32,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 21/12/2026","Pais":"Panama"},{"Destino":"Puerto Vallarta, Mexico","Cadena":"Hoteles Buenaventura","Hotel":"Villa Premiere Boutique Hotel & Romantic Getaway","Desc":32,"BW":"19/10/2026 – 29/10/2026","TW":"20/12/2026 – 01/07/2027","Pais":"Mexico"},{"Destino":"San Andres, Colombia","Cadena":"Oxohotel","Hotel":"Grand Sirenis San Andrés","Desc":31,"BW":"19/10/2026 – 21/10/2026","TW":"19/10/2026 – 23/12/2026","Pais":"Colombia"},{"Destino":"Puerto Plata, Republica Dominicana","Cadena":"Hodelpa Hotels","Hotel":"Emotions by Hodelpa Puerto Plata - All Inclusive","Desc":30,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 23/12/2026","Pais":"Republica Dominicana"},{"Destino":"Cabo San Lucas, Mexico","Cadena":"Solmar Hotels & Resorts","Hotel":"Playa Grande Resort and Grand Spa","Desc":28,"BW":"19/10/2026 – 23/10/2026","TW":"22/12/2026 – 01/04/2027","Pais":"Mexico"},{"Destino":"Cabo San Lucas, Mexico","Cadena":"Solmar Hotels & Resorts","Hotel":"Grand Solmar Land End Resort & Spa","Desc":26,"BW":"19/10/2026 – 23/10/2026","TW":"22/12/2026 – 01/04/2027","Pais":"Mexico"},{"Destino":"Cabo San Lucas, Mexico","Cadena":"Solmar Hotels & Resorts","Hotel":"Solmar Resort","Desc":26,"BW":"19/10/2026 – 23/10/2026","TW":"22/12/2026 – 01/04/2027","Pais":"Mexico"},{"Destino":"Riviera Maya, Mexico","Cadena":"Lomas Hospitality","Hotel":"El Dorado Maroma, All & More Inclusive - Adults Only","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"06/01/2027 – 30/06/2027","Pais":"Mexico"},{"Destino":"Irapuato, Mexico","Cadena":"Grupo Brisas","Hotel":"Galeria Plaza Irapuato","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 17/12/2026","Pais":"Mexico"},{"Destino":"Leon, Mexico","Cadena":"Grupo Brisas","Hotel":"Galeria Plaza Leon","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 17/12/2026","Pais":"Mexico"},{"Destino":"Monterrey, Mexico","Cadena":"Grupo Brisas","Hotel":"Galeria Plaza Monterrey","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 07/01/2027","Pais":"Mexico"},{"Destino":"Ciudad De Mexico, Mexico","Cadena":"Grupo Brisas","Hotel":"Galeria Plaza Reforma","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 07/01/2027","Pais":"Mexico"},{"Destino":"Ciudad De Mexico, Mexico","Cadena":"Grupo Brisas","Hotel":"Galeria Plaza San Jeronimo","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 07/01/2027","Pais":"Mexico"},{"Destino":"Veracruz, Mexico","Cadena":"Grupo Brisas","Hotel":"Galería Plaza Veracruz by Brisas","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 07/01/2027","Pais":"Mexico"},{"Destino":"Queretaro, Mexico","Cadena":"Grupo Brisas","Hotel":"Hacienda Jurica by Brisas","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 07/01/2027","Pais":"Mexico"},{"Destino":"Acapulco, Mexico","Cadena":"Grupo Brisas","Hotel":"Las Brisas Acapulco","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 07/01/2027","Pais":"Mexico"},{"Destino":"Huatulco, Mexico","Cadena":"Grupo Brisas","Hotel":"Las Brisas Huatulco","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 07/01/2027","Pais":"Mexico"},{"Destino":"Ixtapa Zihuatanejo, Mexico","Cadena":"Grupo Brisas","Hotel":"Las Brisas Ixtapa","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 20/12/2026","Pais":"Mexico"},{"Destino":"Merida, Mexico","Cadena":"Grupo Brisas","Hotel":"Las Brisas Merida","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 17/12/2026","Pais":"Mexico"},{"Destino":"Ixtapa Zihuatanejo, Mexico","Cadena":"Hyatt Inclusive Collection","Hotel":"Sunscape Dorado Pacifico Ixtapa Resort and Spa- All Inclusive","Desc":21,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 18/12/2026","Pais":"Mexico"},{"Destino":"Playa Del Carmen, Mexico","Cadena":"Wyndham Hotels & Resorts","Hotel":"Wyndham Garden Playa del Carmen","Desc":21,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 21/12/2026","Pais":"Mexico"},{"Destino":"Cancun, Mexico","Cadena":"Park Royal Hotels and Resorts","Hotel":"Grand Park Royal Cancún","Desc":20,"BW":"19/10/2026 – 29/10/2026","TW":"22/12/2026 – 01/04/2027","Pais":"Mexico"},{"Destino":"Cozumel, Mexico","Cadena":"Park Royal Hotels and Resorts","Hotel":"Grand Park Royal Cozumel","Desc":20,"BW":"19/10/2026 – 29/10/2026","TW":"22/12/2026 – 01/04/2027","Pais":"Mexico"},{"Destino":"Puerto Vallarta, Mexico","Cadena":"Park Royal Hotels and Resorts","Hotel":"Grand Park Royal Puerto Vallarta","Desc":20,"BW":"19/10/2026 – 29/10/2026","TW":"22/12/2026 – 01/04/2027","Pais":"Mexico"},{"Destino":"Acapulco, Mexico","Cadena":"Park Royal Hotels and Resorts","Hotel":"Park Royal Beach Acapulco - All Inclusive","Desc":20,"BW":"19/10/2026 – 29/10/2026","TW":"22/12/2026 – 01/04/2027","Pais":"Mexico"},{"Destino":"Cancun, Mexico","Cadena":"Park Royal Hotels and Resorts","Hotel":"Park Royal Beach Cancun","Desc":20,"BW":"19/10/2026 – 29/10/2026","TW":"22/12/2026 – 01/04/2027","Pais":"Mexico"},{"Destino":"Ixtapa Zihuatanejo, Mexico","Cadena":"Park Royal Hotels and Resorts","Hotel":"Park Royal Beach Ixtapa","Desc":20,"BW":"19/10/2026 – 29/10/2026","TW":"22/12/2026 – 01/04/2027","Pais":"Mexico"},{"Destino":"Rio Quente, Brasil","Cadena":"Aviva Hotels","Hotel":"Rio Quente Cristal Resorts","Desc":20,"BW":"19/10/2026 – 23/10/2026","TW":"20/10/2026 – 01/01/2027","Pais":"Brasil"},{"Destino":"Rio Quente, Brasil","Cadena":"Aviva Hotels","Hotel":"Rio Quente Resorts - Hotel Pousada","Desc":20,"BW":"19/10/2026 – 23/10/2026","TW":"20/10/2026 – 01/01/2027","Pais":"Brasil"},{"Destino":"Rio Quente, Brasil","Cadena":"Aviva Hotels","Hotel":"Rio Quente Resorts – Hotel Giardino","Desc":20,"BW":"19/10/2026 – 23/10/2026","TW":"24/12/2026 – 01/01/2027","Pais":"Brasil"},{"Destino":"Cancun, Mexico","Cadena":"Park Royal Hotels and Resorts","Hotel":"Royal Select at Grand Park Royal Cancún-All Inclusive-Adults Only","Desc":20,"BW":"19/10/2026 – 29/10/2026","TW":"22/12/2026 – 01/04/2027","Pais":"Mexico"},{"Destino":"Costa Do Sauipe, Brasil","Cadena":"Aviva Hotels","Hotel":"Sauipe Mar Premium - All Inclusive","Desc":20,"BW":"19/10/2026 – 23/10/2026","TW":"20/10/2026 – 01/01/2027","Pais":"Brasil"},{"Destino":"Costa Do Sauipe, Brasil","Cadena":"Aviva Hotels","Hotel":"Sauipe Sol Grand Premium – All Inclusive","Desc":20,"BW":"19/10/2026 – 23/10/2026","TW":"20/10/2026 – 01/01/2027","Pais":"Brasil"},{"Destino":"Costa Do Sauipe, Brasil","Cadena":"Aviva Hotels","Hotel":"Sauipe Terra Resort - All Inclusive","Desc":20,"BW":"19/10/2026 – 23/10/2026","TW":"20/10/2026 – 01/01/2027","Pais":"Brasil"},{"Destino":"Santa Marta, Colombia","Cadena":"Estelar Hoteles","Hotel":"Estelar Santamar Hotel","Desc":18,"BW":"19/10/2026 – 23/10/2026","TW":"19/10/2026 – 17/12/2026","Pais":"Colombia"},{"Destino":"Medellin, Colombia","Cadena":"Estelar Hoteles","Hotel":"Estelar Square","Desc":18,"BW":"19/10/2026 – 23/10/2026","TW":"03/02/2027 – 15/03/2027","Pais":"Colombia"},{"Destino":"Medellin, Colombia","Cadena":"Estelar Hoteles","Hotel":"Hotel Estelar Blue","Desc":18,"BW":"19/10/2026 – 23/10/2026","TW":"19/10/2026 – 22/11/2026","Pais":"Colombia"},{"Destino":"Barranquilla, Colombia","Cadena":"Estelar Hoteles","Hotel":"Hotel Estelar En Alto Prado","Desc":18,"BW":"19/10/2026 – 23/10/2026","TW":"19/10/2026 – 17/11/2026","Pais":"Colombia"},{"Destino":"Bogota, Colombia","Cadena":"Estelar Hoteles","Hotel":"Hotel Estelar Parque De La 93","Desc":18,"BW":"19/10/2026 – 23/10/2026","TW":"11/01/2026 – 17/11/2026","Pais":"Colombia"},{"Destino":"Bogota, Colombia","Cadena":"Em Hotels","Hotel":"Hotel Andes Plaza","Desc":15,"BW":"19/10/2026 – 29/10/2026","TW":"12/08/2026 – 18/12/2026","Pais":"Colombia"},{"Destino":"Cancun, Mexico","Cadena":"Hyatt Inclusive Collection","Hotel":"Secrets The Vine Cancun - All Inclusive - Adults Only","Desc":14,"BW":"19/10/2026 – 31/10/2026","TW":"22/01/2027 – 02/01/2027","Pais":"Mexico"},{"Destino":"Riviera Maya, Mexico","Cadena":"Hyatt Inclusive Collection","Hotel":"Dreams Aventuras Riviera Maya - All Inclusive","Desc":12,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 01/01/2027","Pais":"Mexico"},{"Destino":"Cali, Colombia","Cadena":"Marriott International","Hotel":"Sonesta Hotel Cali","Desc":12,"BW":"19/10/2026 – 25/10/2026","TW":"18/12/2026 – 25/12/2026","Pais":"Colombia"},{"Destino":"Gramado, Brasil","Cadena":"Fioreze","Hotel":"Hotel Fioreze Centro","Desc":10,"BW":"19/10/2026 – 29/10/2026","TW":"22/11/2026 – 23/12/2026","Pais":"Brasil"},{"Destino":"Gramado, Brasil","Cadena":"Fioreze","Hotel":"Hotel Fioreze Primo","Desc":10,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 19/12/2026","Pais":"Brasil"},{"Destino":"Gramado, Brasil","Cadena":"Fioreze","Hotel":"Hotel Fioreze Quero Quero","Desc":10,"BW":"19/10/2026 – 29/10/2026","TW":"17/01/2027 – 26/03/2027","Pais":"Brasil"},{"Destino":"Cancun, Mexico","Cadena":"Meliá","Hotel":"Melia Casa Maya Cancun","Desc":10,"BW":"19/10/2026 – 29/10/2026","TW":"11/08/2026 – 25/11/2026","Pais":"Mexico"},{"Destino":"Cancun, Mexico","Cadena":"Hyatt Inclusive Collection","Hotel":"Secrets Playa Blanca Costa Mujeres","Desc":10,"BW":"19/10/2026 – 29/10/2026","TW":"15/12/2026 – 04/01/2027","Pais":"Mexico"},{"Destino":"Huatulco, Mexico","Cadena":"Hyatt Inclusive Collection","Hotel":"Dreams Huatulco Resort & Spa","Desc":9,"BW":"19/10/2026 – 31/10/2026","TW":"19/10/2026 – 01/01/2027","Pais":"Mexico"},{"Destino":"Huatulco, Mexico","Cadena":"Hyatt Inclusive Collection","Hotel":"Secrets Huatulco Resort And Spa","Desc":9,"BW":"19/10/2026 – 31/10/2026","TW":"19/10/2026 – 31/12/2026","Pais":"Mexico"}];
+const CHAINS={"Grupo Brisas":[{"Destino":"Cancun, Mexico","Hotel":"Nizuc Resort and Spa","Desc":40,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 26/11/2026"},{"Destino":"Irapuato, Mexico","Hotel":"Galeria Plaza Irapuato","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 17/12/2026"},{"Destino":"Leon, Mexico","Hotel":"Galeria Plaza Leon","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 17/12/2026"},{"Destino":"Monterrey, Mexico","Hotel":"Galeria Plaza Monterrey","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 07/01/2027"},{"Destino":"Ciudad De Mexico, Mexico","Hotel":"Galeria Plaza Reforma","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 07/01/2027"},{"Destino":"Ciudad De Mexico, Mexico","Hotel":"Galeria Plaza San Jeronimo","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 07/01/2027"},{"Destino":"Veracruz, Mexico","Hotel":"Galería Plaza Veracruz by Brisas","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 07/01/2027"},{"Destino":"Queretaro, Mexico","Hotel":"Hacienda Jurica by Brisas","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 07/01/2027"},{"Destino":"Acapulco, Mexico","Hotel":"Las Brisas Acapulco","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 07/01/2027"},{"Destino":"Huatulco, Mexico","Hotel":"Las Brisas Huatulco","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 07/01/2027"},{"Destino":"Ixtapa Zihuatanejo, Mexico","Hotel":"Las Brisas Ixtapa","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 20/12/2026"},{"Destino":"Merida, Mexico","Hotel":"Las Brisas Merida","Desc":25,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 17/12/2026"}],"Park Royal Hotels and Resorts":[{"Destino":"Cancun, Mexico","Hotel":"Grand Park Royal Cancún","Desc":20,"BW":"19/10/2026 – 29/10/2026","TW":"22/12/2026 – 01/04/2027"},{"Destino":"Cozumel, Mexico","Hotel":"Grand Park Royal Cozumel","Desc":20,"BW":"19/10/2026 – 29/10/2026","TW":"22/12/2026 – 01/04/2027"},{"Destino":"Puerto Vallarta, Mexico","Hotel":"Grand Park Royal Puerto Vallarta","Desc":20,"BW":"19/10/2026 – 29/10/2026","TW":"22/12/2026 – 01/04/2027"},{"Destino":"Acapulco, Mexico","Hotel":"Park Royal Beach Acapulco - All Inclusive","Desc":20,"BW":"19/10/2026 – 29/10/2026","TW":"22/12/2026 – 01/04/2027"},{"Destino":"Cancun, Mexico","Hotel":"Park Royal Beach Cancun","Desc":20,"BW":"19/10/2026 – 29/10/2026","TW":"22/12/2026 – 01/04/2027"},{"Destino":"Ixtapa Zihuatanejo, Mexico","Hotel":"Park Royal Beach Ixtapa","Desc":20,"BW":"19/10/2026 – 29/10/2026","TW":"22/12/2026 – 01/04/2027"},{"Destino":"Cancun, Mexico","Hotel":"Royal Select at Grand Park Royal Cancún-All Inclusive-Adults Only","Desc":20,"BW":"19/10/2026 – 29/10/2026","TW":"22/12/2026 – 01/04/2027"}],"Hyatt Inclusive Collection":[{"Destino":"Ixtapa Zihuatanejo, Mexico","Hotel":"Sunscape Dorado Pacifico Ixtapa Resort and Spa- All Inclusive","Desc":21,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 18/12/2026"},{"Destino":"Cancun, Mexico","Hotel":"Secrets The Vine Cancun - All Inclusive - Adults Only","Desc":14,"BW":"19/10/2026 – 31/10/2026","TW":"22/01/2027 – 02/01/2027"},{"Destino":"Riviera Maya, Mexico","Hotel":"Dreams Aventuras Riviera Maya - All Inclusive","Desc":12,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 01/01/2027"},{"Destino":"Cancun, Mexico","Hotel":"Secrets Playa Blanca Costa Mujeres","Desc":10,"BW":"19/10/2026 – 29/10/2026","TW":"15/12/2026 – 04/01/2027"},{"Destino":"Huatulco, Mexico","Hotel":"Dreams Huatulco Resort & Spa","Desc":9,"BW":"19/10/2026 – 31/10/2026","TW":"19/10/2026 – 01/01/2027"},{"Destino":"Huatulco, Mexico","Hotel":"Secrets Huatulco Resort And Spa","Desc":9,"BW":"19/10/2026 – 31/10/2026","TW":"19/10/2026 – 31/12/2026"}],"Aviva Hotels":[{"Destino":"Rio Quente, Brasil","Hotel":"Rio Quente Cristal Resorts","Desc":20,"BW":"19/10/2026 – 23/10/2026","TW":"20/10/2026 – 01/01/2027"},{"Destino":"Rio Quente, Brasil","Hotel":"Rio Quente Resorts - Hotel Pousada","Desc":20,"BW":"19/10/2026 – 23/10/2026","TW":"20/10/2026 – 01/01/2027"},{"Destino":"Rio Quente, Brasil","Hotel":"Rio Quente Resorts – Hotel Giardino","Desc":20,"BW":"19/10/2026 – 23/10/2026","TW":"24/12/2026 – 01/01/2027"},{"Destino":"Costa Do Sauipe, Brasil","Hotel":"Sauipe Mar Premium - All Inclusive","Desc":20,"BW":"19/10/2026 – 23/10/2026","TW":"20/10/2026 – 01/01/2027"},{"Destino":"Costa Do Sauipe, Brasil","Hotel":"Sauipe Sol Grand Premium – All Inclusive","Desc":20,"BW":"19/10/2026 – 23/10/2026","TW":"20/10/2026 – 01/01/2027"},{"Destino":"Costa Do Sauipe, Brasil","Hotel":"Sauipe Terra Resort - All Inclusive","Desc":20,"BW":"19/10/2026 – 23/10/2026","TW":"20/10/2026 – 01/01/2027"}],"Grupo Hotelero Santa Fe":[{"Destino":"Cancun, Mexico","Hotel":"Krystal Urban Cancún & Beach Club","Desc":60,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 25/12/2026"},{"Destino":"Playa Del Carmen, Mexico","Hotel":"Mahekal Beach Resort & Spa","Desc":48,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 12/01/2026"},{"Destino":"Ixtapa Zihuatanejo, Mexico","Hotel":"Krystal Ixtapa All Inclusive","Desc":46,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 01/03/2027"},{"Destino":"Cancun, Mexico","Hotel":"Krystal Cancún","Desc":45,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 25/12/2026"},{"Destino":"Cancun, Mexico","Hotel":"Krystal Grand Cancun - All Inclusive","Desc":43,"BW":"19/10/2026 – 29/10/2026","TW":"20/03/2027 – 28/03/2027"},{"Destino":"Puerto Vallarta, Mexico","Hotel":"Krystal Puerto Vallarta","Desc":40,"BW":"19/10/2026 – 29/10/2026","TW":"01/03/2027 – 25/03/2027"}],"Estelar Hoteles":[{"Destino":"Santa Marta, Colombia","Hotel":"Estelar Santamar Hotel","Desc":18,"BW":"19/10/2026 – 23/10/2026","TW":"19/10/2026 – 17/12/2026"},{"Destino":"Medellin, Colombia","Hotel":"Estelar Square","Desc":18,"BW":"19/10/2026 – 23/10/2026","TW":"03/02/2027 – 15/03/2027"},{"Destino":"Medellin, Colombia","Hotel":"Hotel Estelar Blue","Desc":18,"BW":"19/10/2026 – 23/10/2026","TW":"19/10/2026 – 22/11/2026"},{"Destino":"Barranquilla, Colombia","Hotel":"Hotel Estelar En Alto Prado","Desc":18,"BW":"19/10/2026 – 23/10/2026","TW":"19/10/2026 – 17/11/2026"},{"Destino":"Bogota, Colombia","Hotel":"Hotel Estelar Parque De La 93","Desc":18,"BW":"19/10/2026 – 23/10/2026","TW":"11/01/2026 – 17/11/2026"}],"Hoteles Solaris":[{"Destino":"Cancun, Mexico","Hotel":"GR Solaris Caribe Adults Only - All Inclusive","Desc":60,"BW":"19/10/2026 – 29/10/2026","TW":"21/03/2027 – 04/03/2027"},{"Destino":"Cancun, Mexico","Hotel":"GR Solaris Cancún and Spa All Inclusive","Desc":59,"BW":"19/10/2026 – 29/10/2026","TW":"21/03/2027 – 04/04/2027"},{"Destino":"Cancun, Mexico","Hotel":"Royal Solaris Cancun - All Inclusive","Desc":59,"BW":"19/10/2026 – 29/10/2026","TW":"21/03/2027 – 04/04/2027"},{"Destino":"San Jose Del Cabo, Mexico","Hotel":"Royal Solaris Los Cabos All Inclusive","Desc":48,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 17/11/2026"}],"Solmar Hotels & Resorts":[{"Destino":"Cabo San Lucas, Mexico","Hotel":"Grand Solmar Pacific Dunes Resort, Golf & Spa","Desc":33,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 21/12/2026"},{"Destino":"Cabo San Lucas, Mexico","Hotel":"Playa Grande Resort and Grand Spa","Desc":28,"BW":"19/10/2026 – 23/10/2026","TW":"22/12/2026 – 01/04/2027"},{"Destino":"Cabo San Lucas, Mexico","Hotel":"Grand Solmar Land End Resort & Spa","Desc":26,"BW":"19/10/2026 – 23/10/2026","TW":"22/12/2026 – 01/04/2027"},{"Destino":"Cabo San Lucas, Mexico","Hotel":"Solmar Resort","Desc":26,"BW":"19/10/2026 – 23/10/2026","TW":"22/12/2026 – 01/04/2027"}],"Fioreze":[{"Destino":"Gramado, Brasil","Hotel":"Hotel Fioreze Centro","Desc":10,"BW":"19/10/2026 – 29/10/2026","TW":"22/11/2026 – 23/12/2026"},{"Destino":"Gramado, Brasil","Hotel":"Hotel Fioreze Primo","Desc":10,"BW":"19/10/2026 – 29/10/2026","TW":"19/10/2026 – 19/12/2026"},{"Destino":"Gramado, Brasil","Hotel":"Hotel Fioreze Quero Quero","Desc":10,"BW":"19/10/2026 – 29/10/2026","TW":"17/01/2027 – 26/03/2027"}],"Princess Hotels & Resorts":[{"Destino":"Playa Del Carmen, Mexico","Hotel":"Platinum Yucatan Princess Adults Only - All inclusive","Desc":51,"BW":"19/10/2026 – 29/10/2026","TW":"01/03/2027 – 02/01/2027"},{"Destino":"Playa Del Carmen, Mexico","Hotel":"Grand Riviera Princess All Suites Resort & Spa","Desc":44,"BW":"19/10/2026 – 29/10/2026","TW":"01/03/2027 – 02/01/2027"},{"Destino":"Playa Del Carmen, Mexico","Hotel":"Grand Sunset Princess - All Inclusive","Desc":44,"BW":"19/10/2026 – 29/10/2026","TW":"01/03/2027 – 02/01/2027"}],"Hoteles Buenaventura":[{"Destino":"Puerto Vallarta, Mexico","Hotel":"Buenaventura Grand Hotel & Great Moments","Desc":32,"BW":"19/10/2026 – 29/10/2026","TW":"20/12/2026 – 01/07/2027"},{"Destino":"Puerto Vallarta, Mexico","Hotel":"Hacienda Buenaventura Hotel & Mexican Charm","Desc":32,"BW":"19/10/2026 – 29/10/2026","TW":"20/12/2026 – 01/07/2027"},{"Destino":"Puerto Vallarta, Mexico","Hotel":"Villa Premiere Boutique Hotel & Romantic Getaway","Desc":32,"BW":"19/10/2026 – 29/10/2026","TW":"20/12/2026 – 01/07/2027"}],"Ocean hotels & Resorts By H10":[{"Destino":"Punta Cana, Republica Dominicana","Hotel":"El Beso Adults Only At Ocean El Faro - All Inclusive","Desc":39,"BW":"19/10/2026 – 28/10/2026","TW":"11/01/2026 – 31/12/2026"},{"Destino":"Punta Cana, Republica Dominicana","Hotel":"Ocean El Faro - All Inclusive","Desc":39,"BW":"19/10/2026 – 28/10/2026","TW":"11/01/2026 – 31/12/2026"}],"Guadalajara Plaza":[{"Destino":"Puerto Vallarta, Mexico","Hotel":"Plaza Pelicanos Club Beach Resort","Desc":40,"BW":"19/10/2026 – 29/10/2026","TW":"01/03/2027 – 30/01/2027"},{"Destino":"Puerto Vallarta, Mexico","Hotel":"Plaza Pelicanos Grand Beach Resort","Desc":39,"BW":"19/10/2026 – 29/10/2026","TW":"01/03/2027 – 29/01/2027"}]};
+const CHAIN_NAMES=["Grupo Brisas","Park Royal Hotels and Resorts","Hyatt Inclusive Collection","Aviva Hotels","Grupo Hotelero Santa Fe","Estelar Hoteles","Hoteles Solaris","Solmar Hotels & Resorts","Fioreze","Princess Hotels & Resorts","Hoteles Buenaventura","Ocean hotels & Resorts By H10","Guadalajara Plaza"];
 
-// ── Color badge by discount ────────────────────────────────────────
-function badgeClass(d){
-  if(d>=50) return 'bg-r';
-  if(d>=35) return 'bg-o';
-  if(d>=20) return 'bg-a';
-  return 'bg-g';
+let activeChain = CHAIN_NAMES[0] || '';
+let filt = 'ALL';
+
+function showPage(id, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('on'));
+  document.querySelectorAll('.main-nav .tab').forEach(t => t.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  if (btn) btn.classList.add('on');
+  if (id === 'cadenas') renderChains(activeChain);
 }
 
-// ── Card HTML ─────────────────────────────────────────────────────
-function cardHTML(r){
-  return `<div class="card">
-    <div class="ch">
-      <div class="dbadge ${badgeClass(r.dto)}">
-        <span class="p">${r.dto}%</span>
-        <span class="o">DSCTO</span>
-      </div>
-      <div class="cd">${r.cadena}</div>
-      <div class="hn">${r.hotel}</div>
-      <div class="cc">&#128205; ${r.destino}</div>
-    </div>
-    <div class="cb">
-      <div class="dates">
-        <div class="di">
-          <div class="dl">Reserva desde</div>
-          <div class="dv">${r.bwd}</div>
-        </div>
-        <div class="di">
-          <div class="dl">Reserva hasta</div>
-          <div class="dv">${r.bwh}</div>
-        </div>
-        <div class="di">
-          <div class="dl">Viaje desde</div>
-          <div class="dv">${r.twd}</div>
-        </div>
-        <div class="di">
-          <div class="dl">Viaje hasta</div>
-          <div class="dv">${r.twh}</div>
-        </div>
-      </div>
-    </div>
-  </div>`;
+function showChain(name, btn) {
+  activeChain = name;
+  document.querySelectorAll('.chain-subnav .tab').forEach(t => t.classList.remove('on'));
+  if (btn) btn.classList.add('on');
+  renderChains(name);
 }
 
-// ── Promotion tab state ───────────────────────────────────────────
-let activeF = 'ALL';
-function setF(btn){
-  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
+function setF(btn) {
+  filt = btn.dataset.f;
+  document.querySelectorAll('.filters .fb').forEach(b => b.classList.remove('on'));
   btn.classList.add('on');
-  activeF = btn.dataset.f;
   render();
 }
 
-function render(){
-  const q   = document.getElementById('q').value.toLowerCase();
+function bgc(d) {
+  return d >= 50 ? 'bg-r' : d >= 35 ? 'bg-o' : d >= 20 ? 'bg-a' : 'bg-g';
+}
+
+function esc(s) {
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function render() {
+  const q   = (document.getElementById('q').value || '').toLowerCase();
   const ord = document.getElementById('ord').value;
-  let rows  = DATA.filter(r=>{
-    if(activeF!=='ALL' && r.pais!==activeF) return false;
-    if(q && !r.hotel.toLowerCase().includes(q) && !r.destino.toLowerCase().includes(q) && !r.cadena.toLowerCase().includes(q)) return false;
-    return true;
+  let rows  = DATA.filter(r =>
+    (filt === 'ALL' || r.Pais === filt) &&
+    (!q || r.Destino.toLowerCase().includes(q) || r.Hotel.toLowerCase().includes(q) || r.Cadena.toLowerCase().includes(q))
+  );
+  rows.sort((a,b) => {
+    if (ord === 'da') return b.Desc - a.Desc;
+    if (ord === 'dd') return a.Desc - b.Desc;
+    if (ord === 'pa') return a.Destino.localeCompare(b.Destino);
+    return a.Hotel.localeCompare(b.Hotel);
   });
-  if(ord==='da') rows.sort((a,b)=>b.dto-a.dto);
-  else if(ord==='dd') rows.sort((a,b)=>a.dto-b.dto);
-  else if(ord==='pa') rows.sort((a,b)=>a.destino.localeCompare(b.destino));
-  else rows.sort((a,b)=>a.hotel.localeCompare(b.hotel));
-  document.getElementById('cnt').textContent = rows.length + ' promociones';
-  document.getElementById('grid').innerHTML = rows.length
-    ? rows.map(cardHTML).join('')
-    : '<div class="empty">Sin resultados para este filtro.</div>';
+  const n = rows.length;
+  document.getElementById('cnt').textContent =
+    n === 1 ? '1 promoci\u00f3n encontrada' : n + ' promociones encontradas';
+  if (!n) {
+    document.getElementById('grid').innerHTML = '<div class="empty"><p>Sin resultados.</p></div>';
+    return;
+  }
+  document.getElementById('grid').innerHTML = rows.map(r =>
+    '<div class="card">' +
+      '<div class="ch">' +
+        '<div class="dbadge ' + bgc(r.Desc) + '">' +
+          '<span class="p">' + r.Desc + '%</span><span class="o">OFF</span>' +
+        '</div>' +
+        '<div class="cd">\uD83D\uDCCD ' + esc(r.Destino) + '</div>' +
+        '<div class="hn">' + esc(r.Hotel || '\u2014') + '</div>' +
+        (r.Cadena ? '<div class="cc">\uD83C\uDFE0 ' + esc(r.Cadena) + '</div>' : '') +
+      '</div>' +
+      '<div class="cb">' +
+        '<div class="dates">' +
+          '<div class="di"><div class="dl">\uD83D\uDCC5 Booking Window</div><div class="dv">' + esc(r.BW || '\u2014') + '</div></div>' +
+          '<div class="di"><div class="dl">\u2708\uFE0F Travel Window</div><div class="dv">' + esc(r.TW || '\u2014') + '</div></div>' +
+        '</div>' +
+      '</div>' +
+    '</div>'
+  ).join('');
 }
 
-// ── Page tabs ────────────────────────────────────────────────────
-function showPage(id,btn){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
-  document.querySelectorAll('.main-nav .tab').forEach(t=>t.classList.remove('on'));
-  document.getElementById(id).classList.add('on');
-  btn.classList.add('on');
-  if(id==='cadenas') initChains();
-  if(id==='top') initTop();
+function renderChains(name) {
+  if (!name) return;
+  const records = (CHAINS[name] || []).slice().sort((a,b) => b.Desc - a.Desc);
+  const n = records.length;
+  let html = '<div class="chain-header"><h2>\u2605 ' + esc(name) + '</h2>' +
+    '<span class="pill">' + n + ' propiedad' + (n === 1 ? '' : 'es') + '</span></div>';
+  html += '<div class="dg">';
+  if (!n) {
+    html += '<div class="empty"><p>Sin datos.</p></div>';
+  } else {
+    html += records.map(r =>
+      '<div class="dc">' +
+        '<div class="ds"></div>' +
+        '<div class="db">' +
+          '<div class="dd">\uD83D\uDCCD ' + esc(r.Destino) + '</div>' +
+          '<div class="dn">' + esc(r.Hotel) + '</div>' +
+          '<div class="ddsc">' + r.Desc + '% OFF</div>' +
+          '<div class="ddate">\uD83D\uDCC5 ' + esc(r.BW) + '</div>' +
+          '<div class="ddate">\u2708\uFE0F ' + esc(r.TW) + '</div>' +
+        '</div>' +
+      '</div>'
+    ).join('');
+  }
+  html += '</div>';
+  document.getElementById('chains-container').innerHTML = html;
 }
 
-// ── Cadenas tab ──────────────────────────────────────────────────
-let chainsInit = false;
-function showChain(name, btn){
-  document.querySelectorAll('.chain-tab').forEach(t=>t.classList.remove('on'));
-  btn.classList.add('on');
-  renderChain(name);
-}
-
-function renderChain(name){
-  const rows = DATA.filter(r=>r.cadena===name).sort((a,b)=>b.dto-a.dto);
-  const container = document.getElementById('chains-container');
-  container.innerHTML = `
-    <div class="chain-header">
-      <h2>${name}</h2>
-      <span class="pill">${rows.length} hoteles</span>
-    </div>
-    <div class="dg">
-      ${rows.map(r=>`
-      <div class="dc">
-        <div class="ds"></div>
-        <div class="db">
-          <div class="dd">&#128205; ${r.destino}</div>
-          <div class="dn">${r.hotel}</div>
-          <div class="ddsc">&#9660; ${r.dto}% descuento</div>
-          <div class="ddate">
-            Reserva: ${r.bwd} &ndash; ${r.bwh}<br>
-            Viaje: ${r.twd} &ndash; ${r.twh}
-          </div>
-        </div>
-      </div>`).join('')}
-    </div>`;
-}
-
-function initChains(){
-  if(chainsInit) return;
-  chainsInit = true;
-  const firstTab = document.querySelector('.chain-tab');
-  if(firstTab) renderChain(firstTab.dataset.chain);
-}
-
-// ── Top Ofertas tab ───────────────────────────────────────────────
-let topInit = false;
-function initTop(){
-  if(topInit) return;
-  topInit = true;
-  const top20 = [...DATA].sort((a,b)=>b.dto-a.dto).slice(0,20);
-  document.getElementById('top-grid').innerHTML = top20.map(r=>`
-    <div class="dc">
-      <div class="ds"></div>
-      <div class="db">
-        <div class="dd">&#128205; ${r.destino}</div>
-        <div class="dn">${r.hotel}</div>
-        <div class="ddsc">&#9660; ${r.dto}% descuento</div>
-        <div class="ddate">
-          ${r.cadena}<br>
-          Reserva: ${r.bwd} &ndash; ${r.bwh}<br>
-          Viaje: ${r.twd} &ndash; ${r.twh}
-        </div>
-      </div>
-    </div>`).join('');
-}
-
-// ── PDF export ───────────────────────────────────────────────────
-function doPDF(){
-  const el = document.body;
+function doPDF() {
+  const btn = document.querySelector('.btn-pdf');
+  btn.textContent = 'Generando...';
+  btn.disabled = true;
+  document.querySelectorAll('.page').forEach(p => p.style.display = 'block');
   html2pdf().set({
-    margin:0,
-    filename:'HotelDO_W43_Octubre2026.pdf',
-    image:{type:'jpeg',quality:.92},
-    html2canvas:{scale:1.5,useCORS:true},
-    jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}
-  }).from(el).save();
+    margin: 8,
+    filename: 'HotelDO_Promociones_W43_Oct2026_v2.pdf',
+    image: {type:'jpeg', quality:.92},
+    html2canvas: {scale:2, useCORS:true},
+    jsPDF: {unit:'mm', format:'a4', orientation:'landscape'}
+  }).from(document.body).save().then(() => {
+    document.querySelectorAll('.page').forEach(p => p.style.display = '');
+    btn.textContent = 'Exportar PDF';
+    btn.disabled = false;
+  });
 }
 
-// ── Init ─────────────────────────────────────────────────────────
+// Init
 render();
+if (CHAIN_NAMES.length) {
+  const first = document.querySelector('.chain-subnav .tab');
+  if (first) first.classList.add('on');
+  renderChains(CHAIN_NAMES[0]);
+}
 </script>
 </body>
 </html>
