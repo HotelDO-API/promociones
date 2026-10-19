@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HotelDO – Promociones Octubre 2026 (W43)</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:"Segoe UI",sans-serif;background:#F2F5FA;color:#1A2B45}
+header{background:#1B365D}
+.hdr-top{background:#1B365D;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;border-bottom:1px solid rgba(255,255,255,.08)}
+.logo-img{height:72px;width:auto;display:block}
+.hdr-right{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.badge{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:.75rem;font-weight:700;padding:8px 18px;border-radius:20px;letter-spacing:.07em;text-transform:uppercase}
+.btn-pdf{display:flex;align-items:center;gap:8px;background:#E8890A;color:#fff;border:none;border-radius:10px;padding:11px 22px;font-size:.86rem;font-weight:800;cursor:pointer;transition:.2s;box-shadow:0 3px 12px rgba(232,137,10,.4)}
+.btn-pdf:hover{background:#F5A030;transform:translateY(-1px)}
+.btn-pdf svg{width:16px;height:16px;flex-shrink:0}
+.hdr-hero{background:#1B365D;text-align:center;padding:36px 48px 44px;position:relative;overflow:hidden}
+.hdr-hero::after{content:"";position:absolute;inset:0;pointer-events:none;background-image:radial-gradient(circle,rgba(255,255,255,.04) 1px,transparent 1px);background-size:28px 28px}
+.hdr-hero h1{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#fff;letter-spacing:-.02em;line-height:1.1;position:relative;z-index:1}
+.hdr-hero h1 span{color:#E8890A}
+.hdr-hero p{color:rgba(255,255,255,.7);margin-top:10px;font-size:1rem;position:relative;z-index:1}
+.stats{display:flex;justify-content:center;flex-wrap:wrap;margin-top:28px;position:relative;z-index:1}
+.stat{text-align:center;padding:12px 34px;border-right:1px solid rgba(255,255,255,.1)}
+.stat:last-child{border:none}
+.stat b{display:block;font-size:2.1rem;font-weight:900;color:#E8890A;line-height:1}
+.stat small{font-size:.68rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.6)}
+.main-nav{background:#1B365D;display:flex;justify-content:center;padding:0 20px;border-bottom:3px solid #E8890A}
+.tab{background:none;border:none;border-bottom:3px solid transparent;color:rgba(255,255,255,.45);font-size:.95rem;font-weight:700;padding:16px 36px;cursor:pointer;transition:.2s;margin-bottom:-3px;white-space:nowrap}
+.tab:hover{color:rgba(255,255,255,.85)}
+.tab.on{color:#E8890A;border-bottom-color:#E8890A}
+main{max-width:1440px;margin:0 auto;padding:28px 18px 64px}
+.page{display:none}.page.on{display:block}
+.bar{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.si{position:relative;flex:1;min-width:220px}
+.si input{width:100%;padding:11px 16px 11px 44px;border:1.5px solid #D4DCE8;border-radius:10px;font-size:.93rem;outline:none;background:#fff}
+.si input:focus{border-color:#E8890A;box-shadow:0 0 0 3px rgba(232,137,10,.12)}
+.si::before{content:"🔍";position:absolute;left:13px;top:50%;transform:translateY(-50%);pointer-events:none;font-size:.9rem}
+.bar select{padding:11px 14px;border:1.5px solid #D4DCE8;border-radius:10px;font-size:.88rem;background:#fff;outline:none;font-weight:600;cursor:pointer}
+.bar select:focus{border-color:#E8890A}
+.filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:14px}
+.fb{padding:6px 15px;border-radius:18px;border:1.5px solid #D4DCE8;background:#fff;font-size:.78rem;font-weight:700;cursor:pointer;transition:.2s;color:#1A2B45}
+.fb:hover{border-color:#E8890A;color:#E8890A}
+.fb.on{background:#E8890A;color:#fff;border-color:#E8890A}
+.all-btn{background:#1B365D;color:#fff;border-color:#1B365D}
+.all-btn.on{background:#1B365D;border-color:#1B365D;color:#fff}
+.count{font-size:.8rem;color:#6B7E99;margin-bottom:14px;font-weight:600}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(305px,1fr));gap:18px}
+.card{background:#fff;border-radius:14px;box-shadow:0 3px 18px rgba(23,46,78,.09);overflow:hidden;display:flex;flex-direction:column;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translateY(-5px);box-shadow:0 14px 36px rgba(23,46,78,.16)}
+.ch{background:#1B365D;padding:17px 18px 14px;position:relative;min-height:98px}
+.ch::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#E8890A,#F5A030)}
+.dbadge{position:absolute;top:13px;right:13px;width:60px;height:60px;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;box-shadow:0 2px 10px rgba(0,0,0,.28)}
+.dbadge .p{font-size:1.25rem;font-weight:900;color:#fff;line-height:1}
+.dbadge .o{font-size:.54rem;font-weight:800;color:#fff;letter-spacing:.05em}
+.bg-r{background:#1A9E6E}.bg-o{background:#E8890A}.bg-a{background:#D96A15}.bg-g{background:#C0687E}
+.cd{font-size:.67rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:#F5A030;margin-bottom:5px}
+.hn{font-size:.91rem;font-weight:700;color:#fff;line-height:1.35;padding-right:72px}
+.cc{font-size:.72rem;color:rgba(255,255,255,.55);margin-top:5px}
+.cb{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:8px}
+.dates{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.di{background:#F2F5FA;border-radius:8px;padding:9px 11px;border:1px solid #D4DCE8}
+.di .dl{font-size:.62rem;text-transform:uppercase;letter-spacing:.06em;color:#6B7E99;font-weight:800;margin-bottom:3px}
+.di .dv{font-size:.78rem;font-weight:700;color:#1B365D}
+.chain-subnav{background:#fff;border-radius:14px;box-shadow:0 3px 18px rgba(23,46,78,.09);margin-bottom:22px;padding:0 16px;display:flex;flex-wrap:wrap;border-bottom:2px solid #E8890A}
+.chain-subnav .tab{color:#1A2B45;border-bottom:3px solid transparent;padding:14px 22px;font-size:.88rem;font-weight:700;margin-bottom:-2px}
+.chain-subnav .tab:hover{color:#E8890A}
+.chain-subnav .tab.on{color:#E8890A;border-bottom-color:#E8890A}
+.chain-header{display:flex;align-items:center;gap:14px;margin-bottom:20px;padding:18px 24px;background:#fff;border-radius:14px;box-shadow:0 3px 18px rgba(23,46,78,.09);border-left:5px solid #E8890A}
+.chain-header h2{font-size:1.3rem;font-weight:900;color:#1B365D}
+.pill{background:#E8890A;color:#fff;font-size:.72rem;font-weight:700;padding:3px 12px;border-radius:11px}
+.dg{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:14px}
+.dc{background:#fff;border-radius:14px;box-shadow:0 3px 18px rgba(23,46,78,.09);display:flex;transition:transform .2s}
+.dc:hover{transform:translateY(-3px)}
+.ds{width:5px;flex-shrink:0;background:linear-gradient(to bottom,#E8890A,#1B365D);border-radius:14px 0 0 14px}
+.db{padding:16px 14px;flex:1}
+.dd{font-size:.67rem;text-transform:uppercase;letter-spacing:.08em;color:#E8890A;font-weight:800;margin-bottom:4px}
+.dn{font-size:.9rem;font-weight:700;color:#1B365D;line-height:1.3;margin-bottom:6px}
+.ddsc{font-size:.85rem;font-weight:900;color:#1A9E6E;margin-bottom:6px}
+.ddate{font-size:.67rem;color:#6B7E99;margin-top:2px;line-height:1.5}
+.empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:#6B7E99}
+footer{background:#1B365D;padding:22px 48px;margin-top:40px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.flogo{height:44px;display:block}
+footer p{color:rgba(255,255,255,.4);font-size:.76rem}
+.pal-banner{display:flex;gap:0;border-radius:16px;overflow:hidden;box-shadow:0 6px 32px rgba(23,46,78,.18);margin-bottom:32px;background:#0D2240;min-height:280px}
+.pal-content{flex:1;padding:36px 40px;display:flex;flex-direction:column;justify-content:center;gap:16px;background:linear-gradient(135deg,#0D2240 60%,#1B365D)}
+.pal-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(232,137,10,.18);border:1px solid rgba(232,137,10,.4);color:#E8890A;font-size:.72rem;font-weight:800;padding:5px 14px;border-radius:20px;letter-spacing:.08em;text-transform:uppercase;width:fit-content}
+.pal-title{font-size:clamp(1.5rem,2.8vw,2.2rem);font-weight:900;color:#fff;line-height:1.12;letter-spacing:-.02em}
+.pal-title span{color:#E8890A}
+.pal-sub{font-size:.9rem;color:rgba(255,255,255,.72);line-height:1.55}
+.pal-sub strong{color:#fff}
+.pal-destinos{margin-top:4px}
+.pal-dest-title{font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:10px}
+.pal-dest-grid{display:flex;flex-wrap:wrap;gap:8px}
+.pal-dest-item{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);color:#fff;font-size:.8rem;font-weight:700;padding:6px 14px;border-radius:10px}
+@media(max-width:700px){
+  .hdr-top{padding:12px 16px}.logo-img{height:52px}
+  .hdr-hero{padding:22px 16px 28px}.hdr-hero h1{font-size:1.7rem}
+  .stat{padding:10px 16px}
+  .tab{padding:12px 18px;font-size:.82rem}
+  .dates{grid-template-columns:1fr}
+  footer{padding:16px 20px}
+  .chain-subnav .tab{padding:11px 14px;font-size:.8rem}
+  .pal-content{padding:20px 18px}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="hdr-top">
+    <img class="logo-img" src="data:image/png;base64,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" alt="HotelDO">
+    <div class="hdr-right">
+      <span class="badge">W43 · Octubre 2026</span>
+      <span class="badge">Solo para agentes de viajes</span>
+      <button class="btn-pdf" onclick="doPDF()">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+        Exportar PDF
+      </button>
+    </div>
+  </div>
+  <div class="hdr-hero">
+    <h1>Promociones Exclusivas <span>HotelDO</span></h1>
+    <p>Campa&ntilde;as Octubre 2026 &middot; Semana 43 &middot; Solo para agentes de viajes</p>
+    <div class="stats">
+      <div class="stat"><b>159</b><small>Promociones</small></div>
+      <div class="stat"><b>65%</b><small>Descuento M&aacute;x.</small></div>
+      <div class="stat"><b>62</b><small>Destinos</small></div>
+      <div class="stat"><b>51</b><small>Cadenas</small></div>
+    </div>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <button class="tab on" onclick="showPage('promos',this)">&#127991; Promociones</button>
+  <button class="tab" onclick="showPage('cadenas',this)">&#11088; Cadenas Destacadas</button>
+  <button class="tab" onclick="showPage('top',this)">&#127775; Top Ofertas W43</button>
+</nav>
+
+<main>
+
+  <!-- PROMOCIONES -->
+  <div class="page on" id="promos">
+    <div class="bar">
+      <div class="si"><input id="q" type="text" placeholder="Buscar hotel, destino o cadena&hellip;" oninput="render()"></div>
+      <select id="ord" onchange="render()">
+        <option value="da">Mayor descuento primero</option>
+        <option value="dd">Menor descuento primero</option>
+        <option value="pa">Destino A&ndash;Z</option>
+        <option value="ha">Hotel A&ndash;Z</option>
+      </select>
+    </div>
+    <div class="filters">
+      <button class="fb all-btn on" data-f="ALL" onclick="setF(this)">&#127758; Todos</button>
+      <button class="fb" data-f="Brasil" onclick="setF(this)">Brasil</button>
+      <button class="fb" data-f="Colombia" onclick="setF(this)">Colombia</button>
+      <button class="fb" data-f="Jamaica" onclick="setF(this)">Jamaica</button>
+      <button class="fb" data-f="Mexico" onclick="setF(this)">Mexico</button>
+      <button class="fb" data-f="Panama" onclick="setF(this)">Panama</button>
+      <button class="fb" data-f="Republica Dominicana" onclick="setF(this)">Republica Dominicana</button>
+    </div>
+    <div class="count" id="cnt"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+
+  <!-- CADENAS DESTACADAS -->
+  <div class="page" id="cadenas">
+    <nav class="chain-subnav">
+      <button class="tab chain-tab on" data-chain="Grupo Brisas" onclick="showChain(this.dataset.chain,this)">🌎 Grupo Brisas</button>
+      <button class="tab chain-tab" data-chain="Palace Resorts" onclick="showChain(this.dataset.chain,this)">🌊 Palace Resorts</button>
+      <button class="tab chain-tab" data-chain="Princess Hotels & Resorts" onclick="showChain(this.dataset.chain,this)">🏖️ Princess Hotels & Resorts</button>
+      <button class="tab chain-tab" data-chain="Grupo Hotelero Santa Fe" onclick="showChain(this.dataset.chain,this)">🏝️ Grupo Hotelero Santa Fe</button>
+      <button class="tab chain-tab" data-chain="Estelar Hoteles" onclick="showChain(this.dataset.chain,this)">⭐ Estelar Hoteles</button>
+      <button class="tab chain-tab" data-chain="Hyatt Inclusive Collection" onclick="showChain(this.dataset.chain,this)">🏨 Hyatt Inclusive Collection</button>
+      <button class="tab chain-tab" data-chain="Park Royal Hotels and Resorts" onclick="showChain(this.dataset.chain,this)">🌟 Park Royal Hotels and Resorts</button>
+      <button class="tab chain-tab" data-chain="Aviva Hotels" onclick="showChain(this.dataset.chain,this)">🔑 Aviva Hotels</button>
+    </nav>
+    <div id="chains-container"></div>
+  </div>
+
+  <!-- TOP OFERTAS W43 -->
+  <div class="page" id="top">
+    <div class="pal-banner">
+      <div class="pal-content">
+        <div class="pal-badge">&#11088; Campa&ntilde;a Destacada W43</div>
+        <div class="pal-title">GRANDES AHORROS<br><span>Octubre 2026</span></div>
+        <div class="pal-sub">
+          <strong>Hasta 65% de descuento</strong> en los mejores hoteles y resorts.<br>
+          Reservas: 19 oct 2026 al 29 oct 2026 &middot; Viaje seg&uacute;n cada oferta
+        </div>
+        <div class="pal-destinos">
+          <div class="pal-dest-title">Top destinos por descuento</div>
+          <div class="pal-dest-grid">
+          <div class="pal-dest-item">Cancun <strong style="color:#E8890A">–65%</strong></div>
+          <div class="pal-dest-item">Cancun <strong style="color:#E8890A">–64%</strong></div>
+          <div class="pal-dest-item">Cancun <strong style="color:#E8890A">–64%</strong></div>
+          <div class="pal-dest-item">Cancun <strong style="color:#E8890A">–64%</strong></div>
+          <div class="pal-dest-item">Panama <strong style="color:#E8890A">–63%</strong></div>
+          <div class="pal-dest-item">Cancun <strong style="color:#E8890A">–62%</strong></div>
+          <div class="pal-dest-item">Cancun <strong style="color:#E8890A">–61%</strong></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dg" id="top-grid"></div>
+  </div>
+
+</main>
+
+<footer>
+  <img class="flogo" src="data:image/png;base64,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" alt="HotelDO">
+  <p>&copy; 2026 HotelDO &middot; Promociones exclusivas para agentes de viajes &middot; W43 Octubre 2026</p>
+</footer>
+
+<script>
+const DATA = [
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Oasis Hotels & Resorts',hotel:'The Grand Oasis Cancún All Inclusive',dto:65,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Oasis Hotels & Resorts',hotel:'Grand Oasis Palm All Inclusive',dto:64,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Oasis Hotels & Resorts',hotel:'The Pyramid Cancun by Oasis - Gourmet Premium All Inclusive',dto:64,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Oasis Hotels & Resorts',hotel:'The Sens Cancun by Oasis',dto:64,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Panama, Panama',pais:'Panama',cadena:'Hard Rock Hotels',hotel:'Megapolis Hotel Panamá',dto:63,bwd:'19 oct 2026',bwh:'28 oct 2026',twd:'19 oct 2026',twh:'31 oct 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Oasis Hotels & Resorts',hotel:'Oasis Palm',dto:62,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Wyndham Hotels & Resorts',hotel:'Wyndham Grand Cancun All-Inclusive Resort & Villas',dto:61,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Hoteles Solaris',hotel:'GR Solaris Caribe Adults Only - All Inclusive',dto:60,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'21 mar 2027',twh:'03 abr 2027'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'Krystal Urban Cancún & Beach Club',dto:60,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'25 dic 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Hoteles Solaris',hotel:'GR Solaris Cancún and Spa All Inclusive',dto:59,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'21 mar 2027',twh:'04 abr 2027'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Hoteles Solaris',hotel:'Royal Solaris Cancun - All Inclusive',dto:59,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'21 mar 2027',twh:'04 abr 2027'},
+{destino:'San Jose Del Cabo, Mexico',pais:'Mexico',cadena:'Hoteles Solaris',hotel:'GR Solaris Lighthouse',dto:58,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Princess Hotels & Resorts',hotel:'Platinum Yucatan Princess Adults Only - All inclusive',dto:51,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'03 ene 2027',twh:'01 feb 2027'},
+{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Playacar Palace All Inclusive',dto:49,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Sun Palace Cancun - Adults Only - All-inclusive',dto:49,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'Mahekal Beach Resort & Spa',dto:48,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 dic 2026'},
+{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Princess Hotels & Resorts',hotel:'Princess Family Club Bavaro - All Inclusive',dto:48,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'San Jose Del Cabo, Mexico',pais:'Mexico',cadena:'Hoteles Solaris',hotel:'Royal Solaris Los Cabos All Inclusive',dto:48,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'17 nov 2026'},
+{destino:'Puerto Plata, Republica Dominicana',pais:'Republica Dominicana',cadena:'Viva Wydham All Inclusive Resorts',hotel:'Viva Heavens by Wyndham, A Trademark Resort',dto:48,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'01 nov 2026',twh:'18 nov 2026'},
+{destino:'Las Terrenas, Republica Dominicana',pais:'Republica Dominicana',cadena:'Viva Wydham All Inclusive Resorts',hotel:'Viva V Samana by Wyndham, A Trademark Adults Resort',dto:48,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Beach Palace Family Resort & Spa',dto:46,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Cozumel, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Cozumel Palace All Inclusive',dto:46,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Ixtapa Zihuatanejo, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'Krystal Ixtapa All Inclusive',dto:46,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'03 ene 2027'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Moon Palace Cancún - All Inclusive',dto:46,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Ocho Rios, Jamaica',pais:'Jamaica',cadena:'Palace Resorts',hotel:'Moon Palace Jamaica – All Inclusive',dto:46,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Moon Palace Nizuc',dto:46,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Bayahibe, Republica Dominicana',pais:'Republica Dominicana',cadena:'Viva Wydham All Inclusive Resorts',hotel:'Viva Dominicus Palace by Wyndham',dto:46,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'06 nov 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'Krystal Cancún',dto:45,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'25 dic 2026'},
+{destino:'Cabo San Lucas, Mexico',pais:'Mexico',cadena:'PAM Hotels',hotel:'Nobu Hotel Los Cabos',dto:45,bwd:'19 oct 2026',bwh:'24 oct 2026',twd:'19 oct 2026',twh:'19 dic 2026'},
+{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'PAM Hotels',hotel:'Unico Hotel Riviera Nayarit - All Inclusive - Adults Only',dto:45,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 dic 2026'},
+{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Princess Hotels & Resorts',hotel:'Grand Riviera Princess All Suites Resort & Spa',dto:44,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'03 ene 2027',twh:'01 feb 2027'},
+{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Princess Hotels & Resorts',hotel:'Grand Sunset Princess - All Inclusive',dto:44,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'03 ene 2027',twh:'01 feb 2027'},
+{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Palace Resorts',hotel:'Moon Palace The Grand - Punta Cana - All Inclusive',dto:44,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Guadalajara Plaza',hotel:'Sunset Plaza Beach Resort Puerto Vallarta All Inclusive',dto:44,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'13 nov 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'Krystal Grand Cancun - All Inclusive',dto:43,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'20 mar 2027',twh:'28 mar 2027'},
+{destino:'Cartagena De Indias, Colombia',pais:'Colombia',cadena:'Las Americas Hotels Group',hotel:'Americas Torre del Mar',dto:41,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'28 oct 2026'},
+{destino:'Panama, Panama',pais:'Panama',cadena:'Decameron Hotels & Resorts',hotel:'Grand Decameron Panamá, A Trademark All-Inclusive Resort',dto:40,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'28 ago 2027',twh:'27 sep 2027'},
+{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'Krystal Puerto Vallarta',dto:40,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'03 ene 2027',twh:'25 mar 2027'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Nizuc Resort and Spa',dto:40,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'26 nov 2026'},
+{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Guadalajara Plaza',hotel:'Plaza Pelicanos Club Beach Resort',dto:40,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'03 ene 2027',twh:'30 ene 2027'},
+{destino:'San Jose Del Cabo, Mexico',pais:'Mexico',cadena:'Posada Real',hotel:'Posada Real Los Cabos',dto:40,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Ocean hotels & Resorts By H10',hotel:'El Beso Adults Only At Ocean El Faro - All Inclusive',dto:39,bwd:'19 oct 2026',bwh:'28 oct 2026',twd:'01 nov 2026',twh:'31 dic 2026'},
+{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Princess Hotels & Resorts',hotel:'Family Club by Grand Riviera Princess - All Inclusive',dto:39,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Ocean hotels & Resorts By H10',hotel:'Ocean El Faro - All Inclusive',dto:39,bwd:'19 oct 2026',bwh:'28 oct 2026',twd:'01 nov 2026',twh:'31 dic 2026'},
+{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Guadalajara Plaza',hotel:'Plaza Pelicanos Grand Beach Resort',dto:39,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'03 ene 2027',twh:'29 ene 2027'},
+{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Princess Hotels & Resorts',hotel:'Grand Bavaro Princess - All Inclusive',dto:37,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Ciudad De Mexico, Mexico',pais:'Mexico',cadena:'Grupo Diestra',hotel:'JW Marriott Hotel Mexico City Santa Fe',dto:37,bwd:'19 oct 2026',bwh:'28 oct 2026',twd:'19 oct 2026',twh:'29 oct 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Le Blanc Spa Resort Cancun- Adults Only - All Inclusive',dto:37,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Cabo San Lucas, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Le Blanc Spa Resort Los Cabos - Adults Only - All Inclusive',dto:37,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Accor Hotels',hotel:'Marival Distinct All-Inclusive Handwritten Collection',dto:37,bwd:'19 oct 2026',bwh:'28 oct 2026',twd:'19 oct 2026',twh:'25 nov 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Palace Resorts',hotel:'Moon Palace The Grand Cancun - All inclusive',dto:37,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Sandos Hotels & Resorts',hotel:'Palmaïa-The House of AïA: All Inclusive Wellness Resort',dto:36,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'03 ene 2027',twh:'01 may 2027'},
+{destino:'Guadalajara, Mexico',pais:'Mexico',cadena:'Hoteles Mision',hotel:'Misión Guadalajara Carlton',dto:35,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 ene 2027'},
+{destino:'Punta De Mita, Mexico',pais:'Mexico',cadena:'Accor Hotels',hotel:'Armony Resort All-Inclusive MGallery Collection',dto:34,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'Krystal Grand Puerto Vallarta',dto:34,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Nuevo Vallarta, Mexico',pais:'Mexico',cadena:'Accor Hotels',hotel:'Marival Emotions Resort All Inclusive - Future Mercure',dto:34,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Grupo Hotelero Santa Fe',hotel:'The Hacienda at Krystal Grand Puerto Vallarta',dto:34,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Cabo San Lucas, Mexico',pais:'Mexico',cadena:'Solmar Hotels & Resorts',hotel:'Grand Solmar Pacific Dunes Resort, Golf & Spa',dto:33,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'21 dic 2026'},
+{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Hoteles Buenaventura',hotel:'Buenaventura Grand Hotel & Great Moments',dto:32,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'20 dic 2026',twh:'07 ene 2027'},
+{destino:'Merida, Mexico',pais:'Mexico',cadena:'Hoteles BAWA',hotel:'Casa Zafiro Hotel - Adults Only, Mérida',dto:32,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Hoteles Buenaventura',hotel:'Hacienda Buenaventura Hotel & Mexican Charm',dto:32,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'20 dic 2026',twh:'07 ene 2027'},
+{destino:'Panama, Panama',pais:'Panama',cadena:'Las Americas Hotels Group',hotel:'Las Americas Golden Tower Panamá',dto:32,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'21 dic 2026'},
+{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Princess Hotels & Resorts',hotel:'Tropical Deluxe Princess - All Inclusive',dto:32,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Hoteles Buenaventura',hotel:'Villa Premiere Boutique Hotel & Romantic Getaway',dto:32,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'20 dic 2026',twh:'07 ene 2027'},
+{destino:'San Andres, Colombia',pais:'Colombia',cadena:'Oxohotel',hotel:'Grand Sirenis San Andrés',dto:31,bwd:'19 oct 2026',bwh:'21 oct 2026',twd:'19 oct 2026',twh:'23 dic 2026'},
+{destino:'Juan Dolio, Republica Dominicana',pais:'Republica Dominicana',cadena:'Hodelpa Hotels',hotel:'Emotions by Hodelpa - Juan Dolio - All inclusive',dto:30,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'06 nov 2026'},
+{destino:'Puerto Plata, Republica Dominicana',pais:'Republica Dominicana',cadena:'Hodelpa Hotels',hotel:'Emotions by Hodelpa Puerto Plata - All Inclusive',dto:30,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'23 dic 2026'},
+{destino:'Bella Vista, Republica Dominicana',pais:'Republica Dominicana',cadena:'Hodelpa Hotels',hotel:'Hodelpa Gran Almirante Hotel & Casino',dto:30,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Ciudad De Mexico, Mexico',pais:'Mexico',cadena:'Wyndham Hotels & Resorts',hotel:'BelAir Unique a Wyndham Hotel',dto:28,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'22 oct 2026',twh:'29 oct 2026'},
+{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Princess Hotels & Resorts',hotel:'Caribe Deluxe Princess - All Inclusive',dto:28,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Cabo San Lucas, Mexico',pais:'Mexico',cadena:'Solmar Hotels & Resorts',hotel:'Playa Grande Resort and Grand Spa',dto:28,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
+{destino:'Cabo San Lucas, Mexico',pais:'Mexico',cadena:'Solmar Hotels & Resorts',hotel:'Grand Solmar Land End Resort & Spa',dto:26,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
+{destino:'Cabo San Lucas, Mexico',pais:'Mexico',cadena:'Solmar Hotels & Resorts',hotel:'Solmar Resort',dto:26,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
+{destino:'Riviera Maya, Mexico',pais:'Mexico',cadena:'Lomas Hospitality',hotel:'El Dorado Maroma, All & More Inclusive - Adults Only',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'01 jun 2027',twh:'30 jun 2027'},
+{destino:'Irapuato, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Galeria Plaza Irapuato',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'17 dic 2026'},
+{destino:'Leon, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Galeria Plaza Leon',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'17 dic 2026'},
+{destino:'Monterrey, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Galeria Plaza Monterrey',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 jul 2027'},
+{destino:'Ciudad De Mexico, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Galeria Plaza Reforma',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 jul 2027'},
+{destino:'Ciudad De Mexico, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Galeria Plaza San Jeronimo',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 jul 2027'},
+{destino:'Veracruz, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Galería Plaza Veracruz by Brisas',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 jul 2027'},
+{destino:'Queretaro, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Hacienda Jurica by Brisas',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 jul 2027'},
+{destino:'Acapulco, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Las Brisas Acapulco',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 jul 2027'},
+{destino:'Huatulco, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Las Brisas Huatulco',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 jul 2027'},
+{destino:'Ixtapa Zihuatanejo, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Las Brisas Ixtapa',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'20 dic 2026'},
+{destino:'Merida, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Las Brisas Merida',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'17 dic 2026'},
+{destino:'Manzanillo, Mexico',pais:'Mexico',cadena:'Grupo Brisas',hotel:'Las Hadas By Brisas',dto:25,bwd:'19 oct 2026',bwh:'21 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Princess Hotels & Resorts',hotel:'Punta Cana Princess Adults Only - All Inclusive',dto:25,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Gramado, Brasil',pais:'Brasil',cadena:'GJP',hotel:'Wish Serrano Resort',dto:25,bwd:'19 oct 2026',bwh:'28 oct 2026',twd:'19 oct 2026',twh:'26 oct 2026'},
+{destino:'Isla De Baru, Colombia',pais:'Colombia',cadena:'Decameron Hotels & Resorts',hotel:'Decameron Barú All Inclusive',dto:24,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
+{destino:'San Andres, Colombia',pais:'Colombia',cadena:'Decameron Hotels & Resorts',hotel:'Decameron Isleño All Inclusive',dto:24,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
+{destino:'San Andres, Colombia',pais:'Colombia',cadena:'Decameron Hotels & Resorts',hotel:'Decameron Los Delfines All Inclusive',dto:24,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
+{destino:'Maceio, Brasil',pais:'Brasil',cadena:'Brisa Hotéis',hotel:'Hotel Brisa Suites',dto:23,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Maceio, Brasil',pais:'Brasil',cadena:'Brisa Hotéis',hotel:'Hotel Brisa Tower Jatiúca',dto:23,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Pocos De Caldas, Brasil',pais:'Brasil',cadena:'Nacional Inn',hotel:'Cassino All Inclusive Resort Poços de Caldas By Nacional Inn',dto:22,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
+{destino:'Ixtapa Zihuatanejo, Mexico',pais:'Mexico',cadena:'Hyatt Inclusive Collection',hotel:'Sunscape Dorado Pacifico Ixtapa Resort and Spa- All Inclusive',dto:21,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'18 dic 2026'},
+{destino:'Playa Del Carmen, Mexico',pais:'Mexico',cadena:'Wyndham Hotels & Resorts',hotel:'Wyndham Garden Playa del Carmen',dto:21,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'21 dic 2026'},
+{destino:'Fortaleza, Brasil',pais:'Brasil',cadena:'Carmel Hotéis',hotel:'Carmel Charme Resort - Aquiraz',dto:20,bwd:'19 oct 2026',bwh:'24 oct 2026',twd:'19 oct 2026',twh:'27 oct 2026'},
+{destino:'Fortaleza, Brasil',pais:'Brasil',cadena:'Carmel Hotéis',hotel:'Carmel Cumbuco Resort',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Gramado, Brasil',pais:'Brasil',cadena:'Gramado Parks',hotel:'Exclusive Gramado Hotel & Spa by Gramado Parks',dto:20,bwd:'19 oct 2026',bwh:'20 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Park Royal Hotels and Resorts',hotel:'Grand Park Royal Cancún',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
+{destino:'Cozumel, Mexico',pais:'Mexico',cadena:'Park Royal Hotels and Resorts',hotel:'Grand Park Royal Cozumel',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
+{destino:'Puerto Vallarta, Mexico',pais:'Mexico',cadena:'Park Royal Hotels and Resorts',hotel:'Grand Park Royal Puerto Vallarta',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
+{destino:'Punta Cana, Republica Dominicana',pais:'Republica Dominicana',cadena:'Sirenis Hotels & Resorts',hotel:'Grand Sirenis Punta Cana Resort & Aquagames – All Inclusive',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Riviera Maya, Mexico',pais:'Mexico',cadena:'Sirenis Hotels & Resorts',hotel:'Grand Sirenis Riviera Maya Resort & Spa - All Inclusive',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Florianopolis, Brasil',pais:'Brasil',cadena:'Intercity Hotels',hotel:'Intercity Florianópolis',dto:20,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
+{destino:'Itupeva, Brasil',pais:'Brasil',cadena:'Intercity Hotels',hotel:'Intercity Itupeva',dto:20,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'31 oct 2026'},
+{destino:'Acapulco, Mexico',pais:'Mexico',cadena:'Park Royal Hotels and Resorts',hotel:'Park Royal Beach Acapulco - All Inclusive',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Park Royal Hotels and Resorts',hotel:'Park Royal Beach Cancun',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
+{destino:'Ixtapa Zihuatanejo, Mexico',pais:'Mexico',cadena:'Park Royal Hotels and Resorts',hotel:'Park Royal Beach Ixtapa',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
+{destino:'Rio Quente, Brasil',pais:'Brasil',cadena:'Aviva Hotels',hotel:'Rio Quente Cristal Resorts',dto:20,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'20 oct 2026',twh:'01 ene 2027'},
+{destino:'Rio Quente, Brasil',pais:'Brasil',cadena:'Aviva Hotels',hotel:'Rio Quente Resorts - Hotel Pousada',dto:20,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'20 oct 2026',twh:'01 ene 2027'},
+{destino:'Rio Quente, Brasil',pais:'Brasil',cadena:'Aviva Hotels',hotel:'Rio Quente Resorts – Hotel Giardino',dto:20,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'24 dic 2026',twh:'01 ene 2027'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Park Royal Hotels and Resorts',hotel:'Royal Select at Grand Park Royal Cancún-All Inclusive-Adults Only',dto:20,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 dic 2026',twh:'04 ene 2027'},
+{destino:'Costa Do Sauipe, Brasil',pais:'Brasil',cadena:'Aviva Hotels',hotel:'Sauipe Mar Premium - All Inclusive',dto:20,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'20 oct 2026',twh:'01 ene 2027'},
+{destino:'Costa Do Sauipe, Brasil',pais:'Brasil',cadena:'Aviva Hotels',hotel:'Sauipe Sol Grand Premium – All Inclusive',dto:20,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'20 oct 2026',twh:'01 ene 2027'},
+{destino:'Costa Do Sauipe, Brasil',pais:'Brasil',cadena:'Aviva Hotels',hotel:'Sauipe Terra Resort - All Inclusive',dto:20,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'20 oct 2026',twh:'01 ene 2027'},
+{destino:'Cartagena De Indias, Colombia',pais:'Colombia',cadena:'Estelar Hoteles',hotel:'Estelar Playa Manzanillo - All Inclusive',dto:18,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'22 oct 2026',twh:'31 oct 2026'},
+{destino:'Santa Marta, Colombia',pais:'Colombia',cadena:'Estelar Hoteles',hotel:'Estelar Santamar Hotel',dto:18,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'19 oct 2026',twh:'17 dic 2026'},
+{destino:'Medellin, Colombia',pais:'Colombia',cadena:'Estelar Hoteles',hotel:'Estelar Square',dto:18,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'02 mar 2027',twh:'15 mar 2027'},
+{destino:'Villavicencio, Colombia',pais:'Colombia',cadena:'Estelar Hoteles',hotel:'Estelar Villavicencio Hotel & Centro de Convenciones',dto:18,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'19 oct 2026',twh:'31 oct 2026'},
+{destino:'Medellin, Colombia',pais:'Colombia',cadena:'Estelar Hoteles',hotel:'Hotel Estelar Blue',dto:18,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'19 oct 2026',twh:'22 nov 2026'},
+{destino:'Barranquilla, Colombia',pais:'Colombia',cadena:'Estelar Hoteles',hotel:'Hotel Estelar En Alto Prado',dto:18,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'19 oct 2026',twh:'17 nov 2026'},
+{destino:'Bogota, Colombia',pais:'Colombia',cadena:'Estelar Hoteles',hotel:'Hotel Estelar Parque De La 93',dto:18,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'01 nov 2026',twh:'17 nov 2026'},
+{destino:'Maceio, Brasil',pais:'Brasil',cadena:'MME Hotéis',hotel:'Acqua Prime',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Belo Horizonte, Brasil',pais:'Brasil',cadena:'Bourbon',hotel:'Bourbon Hotel Savassi | Belo Horizonte',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'21 oct 2026',twh:'31 oct 2026'},
+{destino:'Balneario Camboriu, Brasil',pais:'Brasil',cadena:'Slaviero Hotéis',hotel:'Brut by Slaviero Hotéis',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Ciudad De Mexico, Mexico',pais:'Mexico',cadena:'HS Hotsson',hotel:'HS HOTSSON Long Stay CDMX Condesa Sur',dto:15,bwd:'19 oct 2026',bwh:'23 oct 2026',twd:'19 oct 2026',twh:'26 oct 2026'},
+{destino:'Bogota, Colombia',pais:'Colombia',cadena:'Em Hotels',hotel:'Hotel Andes Plaza',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'08 dic 2026',twh:'18 dic 2026'},
+{destino:'Sao Jose Do Rio Preto, Brasil',pais:'Brasil',cadena:'Intercity Hotels',hotel:'Hotel Nacional de Rio Preto - Distributed By Intercity',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Curitiba, Brasil',pais:'Brasil',cadena:'Intercity Hotels',hotel:'Intercity Curitiba - Centro Cívico',dto:15,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Porto Alegre, Brasil',pais:'Brasil',cadena:'Intercity Hotels',hotel:'Intercity Porto Alegre Praia de Belas',dto:15,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Pindamonhangaba, Brasil',pais:'Brasil',cadena:'Intercity Hotels',hotel:'Intercity Pátio Pinda Hotel & Resort',dto:15,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'31 oct 2026'},
+{destino:'Maceio, Brasil',pais:'Brasil',cadena:'MME Hotéis',hotel:'Ipioca Beach Resort Maceió',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Maceio, Brasil',pais:'Brasil',cadena:'MME Hotéis',hotel:'Maceió Mar Resort All Inclusive',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Tlaquepaque, Mexico',pais:'Mexico',cadena:'Choice Hotels',hotel:'Radisson Hotel Tapatio Guadalajara',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Curitiba, Brasil',pais:'Brasil',cadena:'Bourbon',hotel:'Rio Hotel by Bourbon Batel | Curitiba',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Campinas, Brasil',pais:'Brasil',cadena:'Bourbon',hotel:'Rio Hotel by Bourbon Campinas',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'23 oct 2026',twh:'01 nov 2026'},
+{destino:'Praia Da Pipa, Brasil',pais:'Brasil',cadena:'Only Hotéis',hotel:'Xamã Senses - Hotel Pousada',dto:15,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Hyatt Inclusive Collection',hotel:'Secrets The Vine Cancun - All Inclusive - Adults Only',dto:14,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'22 ene 2027',twh:'01 feb 2027'},
+{destino:'Riviera Maya, Mexico',pais:'Mexico',cadena:'Hyatt Inclusive Collection',hotel:'Dreams Aventuras Riviera Maya - All Inclusive',dto:12,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 ene 2027'},
+{destino:'Cali, Colombia',pais:'Colombia',cadena:'Marriott International',hotel:'Sonesta Hotel Cali',dto:12,bwd:'19 oct 2026',bwh:'25 oct 2026',twd:'18 dic 2026',twh:'25 dic 2026'},
+{destino:'Atibaia, Brasil',pais:'Brasil',cadena:'Bourbon',hotel:'Bourbon Resort Atibaia',dto:10,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
+{destino:'Salvador, Brasil',pais:'Brasil',cadena:'Catussaba Hotéis e Resorts',hotel:'Catussaba Suítes Resort',dto:10,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'30 oct 2026'},
+{destino:'San Pablo, Brasil',pais:'Brasil',cadena:'DELPLAZA Hotels',hotel:'DELPLAZA Excelsior São Paulo - By Monreale',dto:10,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'28 oct 2026'},
+{destino:'San Pablo, Brasil',pais:'Brasil',cadena:'DELPLAZA Hotels',hotel:'DELPLAZA Marabá São Paulo',dto:10,bwd:'19 oct 2026',bwh:'27 oct 2026',twd:'19 oct 2026',twh:'28 oct 2026'},
+{destino:'Olimpia, Brasil',pais:'Brasil',cadena:'Enjoy Hotels',hotel:'Enjoy Olimpia Park Resort',dto:10,bwd:'19 oct 2026',bwh:'24 oct 2026',twd:'19 oct 2026',twh:'27 oct 2026'},
+{destino:'Gramado, Brasil',pais:'Brasil',cadena:'Fioreze',hotel:'Hotel Fioreze Centro',dto:10,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'22 nov 2026',twh:'23 dic 2026'},
+{destino:'Gramado, Brasil',pais:'Brasil',cadena:'Fioreze',hotel:'Hotel Fioreze Primo',dto:10,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'19 dic 2026'},
+{destino:'Gramado, Brasil',pais:'Brasil',cadena:'Fioreze',hotel:'Hotel Fioreze Quero Quero',dto:10,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'17 ene 2027',twh:'26 mar 2027'},
+{destino:'Florianopolis, Brasil',pais:'Brasil',cadena:'Porto Sol Hotéis',hotel:'Hotel Porto Sol Ingleses',dto:10,bwd:'19 oct 2026',bwh:'28 oct 2026',twd:'19 oct 2026',twh:'31 oct 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Meliá',hotel:'Melia Casa Maya Cancun',dto:10,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'08 nov 2026',twh:'25 nov 2026'},
+{destino:'San Pablo, Brasil',pais:'Brasil',cadena:'DELPLAZA Hotels',hotel:'Monreale Lifestyle Higienópolis São Paulo',dto:10,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Indaiatuba, Brasil',pais:'Brasil',cadena:'Bourbon',hotel:'Rio Hotel by Bourbon Indaiatuba',dto:10,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Cancun, Mexico',pais:'Mexico',cadena:'Hyatt Inclusive Collection',hotel:'Secrets Playa Blanca Costa Mujeres',dto:10,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'15 dic 2026',twh:'01 abr 2027'},
+{destino:'Huatulco, Mexico',pais:'Mexico',cadena:'Hyatt Inclusive Collection',hotel:'Dreams Huatulco Resort & Spa',dto:9,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'01 ene 2027'},
+{destino:'Huatulco, Mexico',pais:'Mexico',cadena:'Hyatt Inclusive Collection',hotel:'Secrets Huatulco Resort And Spa',dto:9,bwd:'19 oct 2026',bwh:'31 oct 2026',twd:'19 oct 2026',twh:'31 dic 2026'},
+{destino:'Tulum, Mexico',pais:'Mexico',cadena:'Hyatt Inclusive Collection',hotel:'Dreams Tulum Resort and Spa',dto:5,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'31 oct 2026'},
+{destino:'Brasilia, Brasil',pais:'Brasil',cadena:'Hotelaria Brasil',hotel:'Ramada By Wyndham Brasilia Alvorada',dto:5,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'},
+{destino:'Brasilia, Brasil',pais:'Brasil',cadena:'Hotelaria Brasil',hotel:'Tryp by Wyndham Brasília Nações',dto:5,bwd:'19 oct 2026',bwh:'29 oct 2026',twd:'19 oct 2026',twh:'01 nov 2026'}
+];
+
+// ── Color badge by discount ────────────────────────────────────────
+function badgeClass(d){
+  if(d>=50) return 'bg-r';
+  if(d>=35) return 'bg-o';
+  if(d>=20) return 'bg-a';
+  return 'bg-g';
+}
+
+// ── Card HTML ─────────────────────────────────────────────────────
+function cardHTML(r){
+  return `<div class="card">
+    <div class="ch">
+      <div class="dbadge ${badgeClass(r.dto)}">
+        <span class="p">${r.dto}%</span>
+        <span class="o">DSCTO</span>
+      </div>
+      <div class="cd">${r.cadena}</div>
+      <div class="hn">${r.hotel}</div>
+      <div class="cc">&#128205; ${r.destino}</div>
+    </div>
+    <div class="cb">
+      <div class="dates">
+        <div class="di">
+          <div class="dl">Reserva desde</div>
+          <div class="dv">${r.bwd}</div>
+        </div>
+        <div class="di">
+          <div class="dl">Reserva hasta</div>
+          <div class="dv">${r.bwh}</div>
+        </div>
+        <div class="di">
+          <div class="dl">Viaje desde</div>
+          <div class="dv">${r.twd}</div>
+        </div>
+        <div class="di">
+          <div class="dl">Viaje hasta</div>
+          <div class="dv">${r.twh}</div>
+        </div>
+      </div>
+    </div>
+  </div>`;
+}
+
+// ── Promotion tab state ───────────────────────────────────────────
+let activeF = 'ALL';
+function setF(btn){
+  document.querySelectorAll('.fb').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  activeF = btn.dataset.f;
+  render();
+}
+
+function render(){
+  const q   = document.getElementById('q').value.toLowerCase();
+  const ord = document.getElementById('ord').value;
+  let rows  = DATA.filter(r=>{
+    if(activeF!=='ALL' && r.pais!==activeF) return false;
+    if(q && !r.hotel.toLowerCase().includes(q) && !r.destino.toLowerCase().includes(q) && !r.cadena.toLowerCase().includes(q)) return false;
+    return true;
+  });
+  if(ord==='da') rows.sort((a,b)=>b.dto-a.dto);
+  else if(ord==='dd') rows.sort((a,b)=>a.dto-b.dto);
+  else if(ord==='pa') rows.sort((a,b)=>a.destino.localeCompare(b.destino));
+  else rows.sort((a,b)=>a.hotel.localeCompare(b.hotel));
+  document.getElementById('cnt').textContent = rows.length + ' promociones';
+  document.getElementById('grid').innerHTML = rows.length
+    ? rows.map(cardHTML).join('')
+    : '<div class="empty">Sin resultados para este filtro.</div>';
+}
+
+// ── Page tabs ────────────────────────────────────────────────────
+function showPage(id,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('on'));
+  document.querySelectorAll('.main-nav .tab').forEach(t=>t.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  btn.classList.add('on');
+  if(id==='cadenas') initChains();
+  if(id==='top') initTop();
+}
+
+// ── Cadenas tab ──────────────────────────────────────────────────
+let chainsInit = false;
+function showChain(name, btn){
+  document.querySelectorAll('.chain-tab').forEach(t=>t.classList.remove('on'));
+  btn.classList.add('on');
+  renderChain(name);
+}
+
+function renderChain(name){
+  const rows = DATA.filter(r=>r.cadena===name).sort((a,b)=>b.dto-a.dto);
+  const container = document.getElementById('chains-container');
+  container.innerHTML = `
+    <div class="chain-header">
+      <h2>${name}</h2>
+      <span class="pill">${rows.length} hoteles</span>
+    </div>
+    <div class="dg">
+      ${rows.map(r=>`
+      <div class="dc">
+        <div class="ds"></div>
+        <div class="db">
+          <div class="dd">&#128205; ${r.destino}</div>
+          <div class="dn">${r.hotel}</div>
+          <div class="ddsc">&#9660; ${r.dto}% descuento</div>
+          <div class="ddate">
+            Reserva: ${r.bwd} &ndash; ${r.bwh}<br>
+            Viaje: ${r.twd} &ndash; ${r.twh}
+          </div>
+        </div>
+      </div>`).join('')}
+    </div>`;
+}
+
+function initChains(){
+  if(chainsInit) return;
+  chainsInit = true;
+  const firstTab = document.querySelector('.chain-tab');
+  if(firstTab) renderChain(firstTab.dataset.chain);
+}
+
+// ── Top Ofertas tab ───────────────────────────────────────────────
+let topInit = false;
+function initTop(){
+  if(topInit) return;
+  topInit = true;
+  const top20 = [...DATA].sort((a,b)=>b.dto-a.dto).slice(0,20);
+  document.getElementById('top-grid').innerHTML = top20.map(r=>`
+    <div class="dc">
+      <div class="ds"></div>
+      <div class="db">
+        <div class="dd">&#128205; ${r.destino}</div>
+        <div class="dn">${r.hotel}</div>
+        <div class="ddsc">&#9660; ${r.dto}% descuento</div>
+        <div class="ddate">
+          ${r.cadena}<br>
+          Reserva: ${r.bwd} &ndash; ${r.bwh}<br>
+          Viaje: ${r.twd} &ndash; ${r.twh}
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+// ── PDF export ───────────────────────────────────────────────────
+function doPDF(){
+  const el = document.body;
+  html2pdf().set({
+    margin:0,
+    filename:'HotelDO_W43_Octubre2026.pdf',
+    image:{type:'jpeg',quality:.92},
+    html2canvas:{scale:1.5,useCORS:true},
+    jsPDF:{unit:'mm',format:'a4',orientation:'portrait'}
+  }).from(el).save();
+}
+
+// ── Init ─────────────────────────────────────────────────────────
+render();
+</script>
+</body>
+</html>
